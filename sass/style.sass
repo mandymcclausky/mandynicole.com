@@ -11,44 +11,350 @@
 
 // Animations
 
-body
-	background: hsl(220, 20%, 20%)
-	color: hsl(220, 10%, 40%)
-	padding: 15%
-
-.intro
-	+animated(fadeInUp, 2s, 2s)
-	font-size: 1.6rem
-	font-weight: 300
-	line-height: 2rem
-
-
+header
+	+animated(fadeIn, 2s, 0s)
 section
-	height: 500px
+	&[id="about"]
+		+animated(fadeIn, 2s, 1.3s)
+	&[id="design"]
+		+animated(fadeIn, 2s, 2.5s)
+
+html
+	font-size: 62.5% // rem to px
+	
+html, body
+	font-family: "Open Sans", Helvetica, sans-serif
+	//height: 100%
+	margin: 0
+	padding: 0
+
+body
+	background: $bg
+	color: $text
 
 
-footer
-	background: hsl(220, 20%, 15%)
-	width: 100%
+.container
+	margin: 0 auto
+	max-width: 800px
+	position: relative
 
-	position: fixed
-	bottom: 0
-	left: 0
+.flex
+	display: flex
+	align-items: baseline
+	justify-content: space-between
 
-	ul
-		float: left
-		list-style: none
+a
+	color: $text 
+	border-bottom: 1px solid fade_out($text, .75)
 
-		li 
-			float: left
-			padding: 4%
+header
+	padding: 32% 0 0
+
+	h1
+		font-size: 1.1rem
+		width: 50%
+		//@include scale(2)
+
+		.box 
+			@extend .fadein
+			border: 2px solid $primary
+			border-radius: 2px
+			color: #FFF
+			display: inline-block
+			margin-right: 4px
+			padding: 4px 1px 4px 2px
+			text-align: center
+			height: 30px
+			width: 30px
+
+			sup 
+				font-size: 1rem
+				vertical-align: 3px
+
+		.tagline
+			@extend .fadein
+			color: $primary
+			display: none
+			font-size: 1.4rem
+			font-weight: 400
+			padding-left: 3px
+			vertical-align: 0
+
+		&:hover
+			.box
+				border-color: $yellow
+			.tagline
+				color: $yellow
+			
+section
+	min-height: 40%
+	overflow: hidden
+	position: relative
+
+	h2 
+		color: $primary
+		font-size: 1.4rem
+		font-weight: 400
+
+	p 
+		color: $text
+		font-size: 1.5rem
+		line-height: 2.5rem
+
+		&.callout
+			color: shade($yellow, 20)
+			font-size: 2.8rem
+			font-weight: 100
+			line-height: 4rem
+
+		&.divider
+			text-align: center
+
+			i 
+				color: lighten($bg, 2)
+				font-size: 10rem
+
+	a
+		&:hover, &.active
+			.more
+				border-color: $yellow
+				padding: 0 18px 0 24px
+
+				.text 
+					display: inline
+
+	.more
+		@extend .fadein
+		@include transform(translateZ(0px))
+		@include appearance(none)
+		background: none
+		border: 2px solid $primary
+		border-radius: 2px
+		color: #FFF
+		cursor: pointer
+		display: block
+		font-size: 1.4rem
+		margin: 2rem auto
+		padding: 0 2%
+
+		&:focus
+			outline: 0
+
+		.text
+			@extend .fadein
+			display: none
+			color: #FFF
+			font-size: .9rem
+			font-weight: 700
+			letter-spacing: .1rem
+			padding-right: 6px
+			text-transform: uppercase
+			vertical-align: .4rem
+
+		i 
+			font-size: 3rem
+
+	> .social
+		@extend .fadein
+		background: shade($bg, 25)
+		border-radius: 2px 2px 0 0
+		color: $bg
+		text-align: center
+		width: 75%
+
+		position: fixed
+		bottom: 42px
+		left: 0
+		right: 0
+		margin-left: auto
+		margin-right: auto
+
+		&:hover
+			background: shade($bg, 8)
 
 			a
-				color: hsl(220, 10%, 40%)
+				color: $text
+				padding: 40px 0
+
+		ul
+			display: flex
+			list-style: none
+			margin: 0 auto
+			max-width: 800px
+
+			li
+				flex: 1
+				position: relative
+
+				a 
+					@extend .fadein
+					border-bottom: none
+					color: $bg
+					display: block
+					height: 100%
+					padding: 10px 0
+						
+					&:hover
+						background: $yellow
+						color: #FFF
+
+						&:after
+							color: fade_out(#FFF, .5)
+							content: attr(data-site)
+							font-size: 1rem
+							position: absolute
+							left: 0
+							right: 0
+							margin-left: auto
+							margin-right: auto
+
+					i 
+						font-size: 3rem
+						display: block
+
+	&[id="about"]
+		padding: 0 0 22%
+
+		.container
+			display: block
+
+			a
+				border-bottom: none
 				display: block
+				overflow: hidden
+				padding: 1% 0
 
-			&:hover
-				background: hsl(220, 20%, 10%)
+				&:hover
+					@extend .fadein
 
+					.callout
+						color: $primary
+
+				.callout
+					@extend .fadein
+					float: left
+					padding: 0 10% 0 0
+					width: 85%
+
+				.more
+					float: left
+					margin: 3.2rem 0 0
+					width: auto
+
+			.details
+				clear: both
+				display: none
+				font-size: 1.2rem
+				height: 170px
+				width: 100%
+
+				.left 
+					width: 85%
+
+				p, span
+					margin: 16px 0
+
+					del 
+						position: relative
+						text-decoration: none
+
+						&::after
+							content: ""
+							position: absolute
+							top: 50%
+							left: 0
+							right: 0
+							border-bottom: 4px ridge fade_out($yellow, .55)
+
+					&.divider
+						text-align: center
+
+						i 
+							font-size: 6rem
+
+	&[id="capabilities"]
+		//background: shade($bg, 5)
+		//background: shade($yellow, 20)
+		+background-image(linear-gradient(left top, #796A4A 0%, #675a3f 100%))
+		color: shade($yellow, 60)
+		padding: 12% 0
+
+		.container
+			//max-width: 60%
+			max-width: 80%
+
+			h2
+				color: #FFF
+				font-size: 2rem
+				margin-bottom: 20px
+
+			.flex
+				div
+					flex: 2
+					font-size: 1.3rem
+					line-height: 2.8rem
+					
+					&:nth-of-type(2)
+						//padding-left: 5% // equal out perceived spacing between divs
+
+					strong
+						color: #FFF
+
+					ul
+						list-style-position: inside
+
+						li
+							&:after
+								color: shade($yellow, 42)
+								content: attr(data-tools)
+
+							ul 
+								color: shade($yellow, 42)
+								line-height: 2.25rem
+
+								li
+									margin-left: 16px
+
+		// .container
+		// 	background: red
+		// 	border-radius: 50%
+		// 	box-shadow: 0 0 60px 40px red
+		// 	text-align: center
+		// 	height: 500px
+		// 	width: 500px
+
+	&[id="design"]
+		display: none
+
+		[id="dribbble"]
+			margin: 10px 0
+
+			li 
+				display: inline
+				list-style: none
+				float: left
+				
 				a
-					color: hsl(220, 10%, 50%)
+					display: inline-block
+					position: relative
+
+					img 
+						display: inline-block
+						width: 100%
+
+					&::after
+						@extend .fadein
+						content: "\a0"
+						opacity: .85
+						position: absolute
+						top: -1px
+						left: 0
+						width: 100.5%
+						height: 100%
+						background: $bg
+						overflow: hidden
+						z-index: 3
+
+					&:hover::after
+						opacity: .25
+

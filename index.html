@@ -3,52 +3,132 @@
 	<head>
 		<title>Whee</title>
 
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/js.js"></script>
+		
+		<script src="https://rawgithub.com/tylergaw/jribbble/master/src/jribbble.js"></script>
+		<script src="js/typewrite.js"></script>
 
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet" type="text/css">
 		<link rel="stylesheet" href="stylesheets/style.css">
 
-		<script>
-			$(document).ready(function() {
-				$("").fadeIn("");
-			});
-		</script>
 	</head>
+
 	<body>
 		
-		<p class="intro">mandy is an interactive designer &amp; developer based in beautiful portland, oregon</p>
+		<div class="container">
+			<header>
+				<h1>
+					<span class="box">M<sup>2</sup></span> <span class="tagline" data-who="is Mandy McClausky">design, code, and stuff</span>
+				</h1>
+			</header>
+		</div>
 
-		<h2>recent work</h2>
+		<section id="about">
+			<div class="container">
+				<a id="bio" href="#">
+					<p class="callout">Mandy is a multi-disciplinary designer based in beautiful Portland, OR.</p>
 
-		<section class="compartment">
-			some screenshots of compartment
+					<button class="more"><span class="text">more</span> <i class="icon">&#59228;</i></button>
+				</a>
+
+				<div class="details">
+						<p>I've been building things on the web for 15 years. I love every aspect of the process &mdash; from wireframing and building prototypes based on UX maps, to experimenting with new technologies and running user tests.
+
+						<p>While I prefer to design in the browser whenever possible, I'm exceptionally versed in Photoshop and Illustrator and have several years of experience working in print as well. 
+				</div> <!-- details -->
+			</div> <!-- container -->
+
+			<div class="social">
+				<ul>
+					<li>
+						<a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank"><i class="social icon">&#62235;</i></a>
+					</li>
+					
+					<li>
+						<a href="http://www.github.com/mandymcclausky" data-site="Github" target="_blank"><i class="social icon">&#62208;</i></a>
+					</li>
+
+					<li>
+						<a href="http://http://www.linkedin.com/profile/view?id=78120173" data-site="Linkedin" target="_blank"><i class="social icon">&#62232;</i></a>
+					</li>
+
+					<li>
+						<a href="#" data-site="Google+"><i class="social icon">&#62223;</i></a>
+					</li>
+
+					<li>
+						<a href="#" data-site="Last.fm"><i class="social icon">&#62241;</i></a>
+					</li>
+
+					<li>
+						<a href="#" data-site="Rdio"><i class="social icon">&#62244;</i></a>
+					</li>
+
+					<li>
+						<a href="#" data-site="SoundCloud"><i class="social icon">&#62280;</i></a>
+					</li>
+				</ul>
+			</div> <!-- social -->
+		</section> <!-- about -->
+
+		<section id="capabilities">
+			<div class="container">
+
+				<h2>Capabilities &amp; Tools</h2>
+
+				<div class="flex">
+
+					<div class="what">
+						<strong>Web &amp; Mobile</strong>
+						<ul>
+							<li>Wireframing
+							<li>High-fidelity Prototyping 
+							<li>Interactive Prototyping 
+							<li>Front-end Design
+								<ul>
+									<li>HTML
+									<li>CSS (Sass/LESS/Stylus)
+									<li>jQuery
+								</ul>
+						</ul>
+					</div>
+					<div class="tools">
+						<strong>Tools</strong>
+						<ul>
+							<li>Sublime Text 2
+							<li data-tools="(Compass.app)">Compass
+							<li data-tools="(Tower.app, GitHub.app)">Git
+							<li><a href="http://www.eigenlogik.com/spectrum/mac">Spectrum</a>
+							<li>Photoshop
+							<li>Illustrator
+							<li>InDesign
+							<li>OS X
+							<li>Windows 7
+						</ul>
+					</div>
+					<div class="misc">
+						<strong>Misc</strong>
+						<ul>
+							<li>Icon, Logo &amp; Type Design
+							<li>Copywriting
+						</ul>
+					</div>
+
+				</div> <!-- flex -->
+
+			</div> <!-- container -->
 		</section>
 
-		<section class="compartment">
-			some screenshots of compartment
-		</section>
-
-		<section class="compartment">
-			some screenshots of compartment
-		</section>
-
-		<section class="compartment">
-			some screenshots of compartment
-		</section>
+		<section id="design">
+			<h2><a href="http://dribbbleboard.com/#mandynicole" target="_blank">Dribbble</a> &mdash;</h2>
+			<div id="dribbble"></div>
+		</section> <!-- design -->
 
 		<footer>
-			<ul>
-				<li><a class="dribbble" href="http://www.dribbble.com/mandynicole/" target="_blank">dribbble</a></li>
-				<li><a class="github" href="https://github.com/mandymcclausky" target="_blank">github</a></li>
-				<li><a class="stackexchange" href="http://stackexchange.com/users/943899/mandynicole?tab=accounts" target="_blank">stackexchange</a></li>
-				<li><a class="forrst" href="https://forrst.com/people/mandymcclausky" target="_blank">forrst</a></li>
-				<li><a class="zerply" href="http://zerply.com/mandynicole/public" target="_blank">zerply</a></li>
-			</ul>
-			<ul>
-				<li><a class="lookwork" href="http://www.lookwork.com/mandy/library/" target="_blank">lookwork</a></li>
-				<li><a class="soundcloud" href="http://soundcloud.com/mandynicole" target="_blank">soundcloud</a></li>
-				<li><a class="rdio" href="http://www.rdio.com/people/mandynicole/" target="_blank">rdio</a></li>
-				<li><a class="svpply" href="http://www.svpply.com/mandy" target="_blank">svpply</a></li>
-			</ul>
+			<div class="container">
+
+			</div>
 		</footer>
 	</body>
 </html>

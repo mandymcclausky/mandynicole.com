@@ -1,57 +1,58 @@
 $(document).ready(function() {
+
+	// tagline variables
+	var tagline = $(".tagline"),
+			original = tagline.clone(true),
+			who = tagline.attr("data-who");
+
 	// typewrite.js
-	$("header .tagline").typewrite({
-		'delay': 50,
-		'cursor': '|'
-	});
+	$(tagline).typewrite();
+
 
 	// letterhead hover
-	var b = '$(".box")',
-			m = 'M<sup>2</sup>';
 	$("header h1").hover(
 		function() {
-			b.addClass("hover", function(e) {
-				if (b.width() > 100) {
-					b.html(m + " is Mandy McClausky");
-				}
-			});
-		},
-		function() {
-			b.removeClass("hover").html(m);
+			tagline.remove();
+			$(this).append(tagline.html(who).typewrite());
+		}, function() {
+			tagline.remove();
+			$(this).append(tagline.html(original).typewrite());
 		}
 	);
-		//	b.addClass("hover");
-		// });
 
-		// $(document).on("");
+	// $(document).on('mouseenter', 'header',
+	// 	function() {
+	// 		tagline.html(who).stop().typewrite();
+	// 	});
+	// $(document).on('mouseleave', 'header',
+	// 	function() {
+	// 		tagline.html( tagline.data(original) );
+	// 	});
 
-
+	// .more buttons variables
+	var container = $(".details"),
+			content = $(".details p"),
+			text = $(".more .text"),
+			icon = $(".more .icon");
 
 	// manipulate .more onClick
-		function bioOpen() {
-			$(".extra").stop().slideDown(800);
-			$(".more .text").text("Close");
-			$(".more .icon").html("&#10060;");
-			$(this).one("click", bioClose);
-		}
-		function bioClose() {
-			$(".extra").stop().slideUp(500);
-			$(".more .text").text("More");
-			$(".more .icon").html("&#59228;");
-			$(this).one("click", bioOpen);
-		}
+	function open() {
+		$(container).slideDown(600);
+		$(content).hide().delay(300).fadeIn(400);
+		$(text).text("Close");
+		$(icon).html("&#10060;");
+		$(this).one("click", close);
+	}
+	function close() {
+		$(content).fadeOut(200);
+		$(container).delay(200).slideUp(400);
+		$(text).text("More");
+		$(icon).html("&#59228;");
+		$(this).one("click", open);
+	}
 
-		$("#about a").one("click", bioOpen);
+	$("#about #bio").one("click", open);
 
-	// scroll .more
-
-	var $more = $("#about a .more:not(.extra)");
- 
-	$(window).scroll(function(){
-		$more
-			.stop()
-			.animate({"marginTop": ($(window).scrollTop() + 30) + "px"}, "fast" );
-	});
 
 	//jRibbble
 	var callback = function (playerShots) {

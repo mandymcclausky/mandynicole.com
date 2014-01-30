@@ -3531,7 +3531,7 @@
 }
 
 /* line 13, ../sass/partials/_animations.scss */
-.fadein {
+.fadein, header h1 .box, header h1 .tagline, section .more, section .more .text, section > .social, section > .social ul li a, section[id="about"] .container a:hover, section[id="about"] .container a .callout, section[id="design"] [id="dribbble"] li a::after {
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -4197,57 +4197,414 @@ i.social {
 }
 
 /* line 14, ../sass/style.sass */
-body {
-  background: #29303d;
-  color: #5c6370;
-  padding: 15%;
+header {
+  -webkit-animation: fadeIn 2s 0s ease both;
+  -moz-animation: fadeIn 2s 0s ease both;
+  -ms-animation: fadeIn 2s 0s ease both;
+  -o-animation: fadeIn 2s 0s ease both;
+  animation: fadeIn 2s 0s ease both;
 }
 
+/* line 17, ../sass/style.sass */
+section[id="about"] {
+  -webkit-animation: fadeIn 2s 1.3s ease both;
+  -moz-animation: fadeIn 2s 1.3s ease both;
+  -ms-animation: fadeIn 2s 1.3s ease both;
+  -o-animation: fadeIn 2s 1.3s ease both;
+  animation: fadeIn 2s 1.3s ease both;
+}
 /* line 19, ../sass/style.sass */
-.intro {
-  -webkit-animation: fadeInUp 2s 2s ease both;
-  -moz-animation: fadeInUp 2s 2s ease both;
-  -ms-animation: fadeInUp 2s 2s ease both;
-  -o-animation: fadeInUp 2s 2s ease both;
-  animation: fadeInUp 2s 2s ease both;
-  font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 2rem;
+section[id="design"] {
+  -webkit-animation: fadeIn 2s 2.5s ease both;
+  -moz-animation: fadeIn 2s 2.5s ease both;
+  -ms-animation: fadeIn 2s 2.5s ease both;
+  -o-animation: fadeIn 2s 2.5s ease both;
+  animation: fadeIn 2s 2.5s ease both;
 }
 
-/* line 26, ../sass/style.sass */
-section {
-  height: 500px;
+/* line 22, ../sass/style.sass */
+html {
+  font-size: 62.5%;
 }
 
-/* line 30, ../sass/style.sass */
-footer {
-  background: #1f242e;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+/* line 25, ../sass/style.sass */
+html, body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-/* line 38, ../sass/style.sass */
-footer ul {
-  float: left;
-  list-style: none;
+
+/* line 31, ../sass/style.sass */
+body {
+  background: #192129;
+  color: #525b60;
 }
-/* line 42, ../sass/style.sass */
-footer ul li {
-  float: left;
-  padding: 4%;
+
+/* line 36, ../sass/style.sass */
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
 }
+
+/* line 41, ../sass/style.sass */
+.flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 /* line 46, ../sass/style.sass */
-footer ul li a {
-  color: #5c6370;
-  display: block;
+a {
+  color: #525b60;
+  border-bottom: 1px solid rgba(82, 91, 96, 0.25);
 }
+
 /* line 50, ../sass/style.sass */
-footer ul li:hover {
-  background: #14181f;
+header {
+  padding: 32% 0 0;
 }
 /* line 53, ../sass/style.sass */
-footer ul li:hover a {
-  color: #737b8c;
+header h1 {
+  font-size: 1.1rem;
+  width: 50%;
+}
+/* line 58, ../sass/style.sass */
+header h1 .box {
+  border: 2px solid #344a55;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  margin-right: 4px;
+  padding: 4px 1px 4px 2px;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+}
+/* line 70, ../sass/style.sass */
+header h1 .box sup {
+  font-size: 1rem;
+  vertical-align: 3px;
+}
+/* line 74, ../sass/style.sass */
+header h1 .tagline {
+  color: #344a55;
+  display: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding-left: 3px;
+  vertical-align: 0;
+}
+/* line 84, ../sass/style.sass */
+header h1:hover .box {
+  border-color: #98855d;
+}
+/* line 86, ../sass/style.sass */
+header h1:hover .tagline {
+  color: #98855d;
+}
+
+/* line 89, ../sass/style.sass */
+section {
+  min-height: 40%;
+  overflow: hidden;
+  position: relative;
+}
+/* line 94, ../sass/style.sass */
+section h2 {
+  color: #344a55;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+/* line 99, ../sass/style.sass */
+section p {
+  color: #525b60;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+/* line 104, ../sass/style.sass */
+section p.callout {
+  color: #796a4a;
+  font-size: 2.8rem;
+  font-weight: 100;
+  line-height: 4rem;
+}
+/* line 110, ../sass/style.sass */
+section p.divider {
+  text-align: center;
+}
+/* line 113, ../sass/style.sass */
+section p.divider i {
+  color: #1d2630;
+  font-size: 10rem;
+}
+/* line 119, ../sass/style.sass */
+section a:hover .more, section a.active .more {
+  border-color: #98855d;
+  padding: 0 18px 0 24px;
+}
+/* line 123, ../sass/style.sass */
+section a:hover .more .text, section a.active .more .text {
+  display: inline;
+}
+/* line 126, ../sass/style.sass */
+section .more {
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 2px solid #344a55;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 1.4rem;
+  margin: 2rem auto;
+  padding: 0 2%;
+}
+/* line 140, ../sass/style.sass */
+section .more:focus {
+  outline: 0;
+}
+/* line 143, ../sass/style.sass */
+section .more .text {
+  display: none;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  padding-right: 6px;
+  text-transform: uppercase;
+  vertical-align: 0.4rem;
+}
+/* line 154, ../sass/style.sass */
+section .more i {
+  font-size: 3rem;
+}
+/* line 157, ../sass/style.sass */
+section > .social {
+  background: #12181e;
+  border-radius: 2px 2px 0 0;
+  color: #192129;
+  text-align: center;
+  width: 75%;
+  position: fixed;
+  bottom: 42px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 172, ../sass/style.sass */
+section > .social:hover {
+  background: #171e25;
+}
+/* line 175, ../sass/style.sass */
+section > .social:hover a {
+  color: #525b60;
+  padding: 40px 0;
+}
+/* line 179, ../sass/style.sass */
+section > .social ul {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 800px;
+}
+/* line 185, ../sass/style.sass */
+section > .social ul li {
+  flex: 1;
+  position: relative;
+}
+/* line 189, ../sass/style.sass */
+section > .social ul li a {
+  border-bottom: none;
+  color: #192129;
+  display: block;
+  height: 100%;
+  padding: 10px 0;
+}
+/* line 197, ../sass/style.sass */
+section > .social ul li a:hover {
+  background: #98855d;
+  color: white;
+}
+/* line 201, ../sass/style.sass */
+section > .social ul li a:hover:after {
+  color: rgba(255, 255, 255, 0.5);
+  content: attr(data-site);
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 211, ../sass/style.sass */
+section > .social ul li a i {
+  font-size: 3rem;
+  display: block;
+}
+/* line 215, ../sass/style.sass */
+section[id="about"] {
+  padding: 0 0 22%;
+}
+/* line 218, ../sass/style.sass */
+section[id="about"] .container {
+  display: block;
+}
+/* line 221, ../sass/style.sass */
+section[id="about"] .container a {
+  border-bottom: none;
+  display: block;
+  overflow: hidden;
+  padding: 1% 0;
+}
+/* line 230, ../sass/style.sass */
+section[id="about"] .container a:hover .callout {
+  color: #344a55;
+}
+/* line 233, ../sass/style.sass */
+section[id="about"] .container a .callout {
+  float: left;
+  padding: 0 10% 0 0;
+  width: 85%;
+}
+/* line 239, ../sass/style.sass */
+section[id="about"] .container a .more {
+  float: left;
+  margin: 3.2rem 0 0;
+  width: auto;
+}
+/* line 244, ../sass/style.sass */
+section[id="about"] .container .details {
+  clear: both;
+  display: none;
+  font-size: 1.2rem;
+  height: 170px;
+  width: 100%;
+}
+/* line 251, ../sass/style.sass */
+section[id="about"] .container .details .left {
+  width: 85%;
+}
+/* line 254, ../sass/style.sass */
+section[id="about"] .container .details p, section[id="about"] .container .details span {
+  margin: 16px 0;
+}
+/* line 257, ../sass/style.sass */
+section[id="about"] .container .details p del, section[id="about"] .container .details span del {
+  position: relative;
+  text-decoration: none;
+}
+/* line 261, ../sass/style.sass */
+section[id="about"] .container .details p del::after, section[id="about"] .container .details span del::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-bottom: 4px ridge rgba(152, 133, 93, 0.45);
+}
+/* line 269, ../sass/style.sass */
+section[id="about"] .container .details p.divider, section[id="about"] .container .details span.divider {
+  text-align: center;
+}
+/* line 272, ../sass/style.sass */
+section[id="about"] .container .details p.divider i, section[id="about"] .container .details span.divider i {
+  font-size: 6rem;
+}
+/* line 275, ../sass/style.sass */
+section[id="capabilities"] {
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #796a4a), color-stop(100%, #675a3f));
+  background-image: -webkit-linear-gradient(left top, #796a4a 0%, #675a3f 100%);
+  background-image: -moz-linear-gradient(left top, #796a4a 0%, #675a3f 100%);
+  background-image: -o-linear-gradient(left top, #796a4a 0%, #675a3f 100%);
+  background-image: linear-gradient(left top, #796a4a 0%, #675a3f 100%);
+  color: #3c3525;
+  padding: 12% 0;
+}
+/* line 282, ../sass/style.sass */
+section[id="capabilities"] .container {
+  max-width: 80%;
+}
+/* line 286, ../sass/style.sass */
+section[id="capabilities"] .container h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+/* line 292, ../sass/style.sass */
+section[id="capabilities"] .container .flex div {
+  flex: 2;
+  font-size: 1.3rem;
+  line-height: 2.8rem;
+}
+/* line 300, ../sass/style.sass */
+section[id="capabilities"] .container .flex div strong {
+  color: white;
+}
+/* line 303, ../sass/style.sass */
+section[id="capabilities"] .container .flex div ul {
+  list-style-position: inside;
+}
+/* line 307, ../sass/style.sass */
+section[id="capabilities"] .container .flex div ul li:after {
+  color: #584d35;
+  content: attr(data-tools);
+}
+/* line 311, ../sass/style.sass */
+section[id="capabilities"] .container .flex div ul li ul {
+  color: #584d35;
+  line-height: 2.25rem;
+}
+/* line 315, ../sass/style.sass */
+section[id="capabilities"] .container .flex div ul li ul li {
+  margin-left: 16px;
+}
+/* line 326, ../sass/style.sass */
+section[id="design"] {
+  display: none;
+}
+/* line 329, ../sass/style.sass */
+section[id="design"] [id="dribbble"] {
+  margin: 10px 0;
+}
+/* line 332, ../sass/style.sass */
+section[id="design"] [id="dribbble"] li {
+  display: inline;
+  list-style: none;
+  float: left;
+}
+/* line 337, ../sass/style.sass */
+section[id="design"] [id="dribbble"] li a {
+  display: inline-block;
+  position: relative;
+}
+/* line 341, ../sass/style.sass */
+section[id="design"] [id="dribbble"] li a img {
+  display: inline-block;
+  width: 100%;
+}
+/* line 345, ../sass/style.sass */
+section[id="design"] [id="dribbble"] li a::after {
+  content: "\a0";
+  opacity: 0.85;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100.5%;
+  height: 100%;
+  background: #192129;
+  overflow: hidden;
+  z-index: 3;
+}
+/* line 358, ../sass/style.sass */
+section[id="design"] [id="dribbble"] li a:hover::after {
+  opacity: 0.25;
 }
