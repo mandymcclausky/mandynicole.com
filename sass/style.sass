@@ -1,6 +1,5 @@
 @import compass
 
-@import partials/animate
 @import partials/animations
 @import partials/defaults
 @import partials/fonts
@@ -12,12 +11,18 @@
 // Animations
 
 header
-	+animated(fadeIn, 2s, 0s)
+	+animated(fadeIn, 4s, 0s)
+
 section
+	// .callout
 	&[id="about"]
-		+animated(fadeIn, 2s, 1.3s)
-	&[id="design"]
-		+animated(fadeIn, 2s, 2.5s)
+		+animated(fadeIn, 2s, 2s)
+	// everything else but .social
+	&:not([id="about"])
+		+animated(fadeInUp, 2s, 2.6s)
+	// social bar
+	&[id="about"] > .social
+		+animated(fadeInUp, 2s, 3.8s)
 
 html
 	font-size: 62.5% // rem to px
@@ -29,9 +34,34 @@ html, body
 	padding: 0
 
 body
-	background: $bg
+	background: shade($bg, 20) url(/img/bg2.jpg) center 40%
+	background-attachment: scroll
+	background-repeat: no-repeat
 	color: $text
 
+nav
+	@extend .fadein
+	border: 2px solid $bg
+	border-radius: 2px
+	color: $bg
+	height: 50px
+	text-align: center
+	width: 78%
+
+	position: fixed
+	z-index: 2
+	left: 0
+	right: 0
+	margin-left: auto
+	margin-right: auto
+	top: 40px
+
+	ul 
+		display: flex
+		list-style: none
+
+		li
+			flex: 1
 
 .container
 	margin: 0 auto
@@ -48,7 +78,7 @@ a
 	border-bottom: 1px solid fade_out($text, .75)
 
 header
-	padding: 32% 0 0
+	padding: 20% 0 0
 
 	h1
 		font-size: 1.1rem
@@ -73,7 +103,7 @@ header
 
 		.tagline
 			@extend .fadein
-			color: $primary
+			color: fade_out($primary, .25)
 			display: none
 			font-size: 1.4rem
 			font-weight: 400
@@ -90,11 +120,25 @@ section
 	min-height: 40%
 	overflow: hidden
 	position: relative
+	padding: 12% 0
 
-	h2 
-		color: $primary
-		font-size: 1.4rem
-		font-weight: 400
+	&:not(#about)
+
+		> *
+			@extend .fadein
+			opacity: .25
+
+		&:hover
+			> *
+				opacity: 1
+
+
+
+	h2
+		color: #FFF
+		font-size: 3rem
+		font-weight: 100
+		margin-bottom: 20px
 
 	p 
 		color: $text
@@ -103,6 +147,7 @@ section
 
 		&.callout
 			color: shade($yellow, 20)
+			//color: tint($primary, 10)
 			font-size: 2.8rem
 			font-weight: 100
 			line-height: 4rem
@@ -154,71 +199,15 @@ section
 		i 
 			font-size: 3rem
 
-	> .social
-		@extend .fadein
-		background: shade($bg, 25)
-		border-radius: 2px 2px 0 0
-		color: $bg
-		text-align: center
-		width: 75%
 
-		position: fixed
-		bottom: 42px
-		left: 0
-		right: 0
-		margin-left: auto
-		margin-right: auto
-
-		&:hover
-			background: shade($bg, 8)
-
-			a
-				color: $text
-				padding: 40px 0
-
-		ul
-			display: flex
-			list-style: none
-			margin: 0 auto
-			max-width: 800px
-
-			li
-				flex: 1
-				position: relative
-
-				a 
-					@extend .fadein
-					border-bottom: none
-					color: $bg
-					display: block
-					height: 100%
-					padding: 10px 0
-						
-					&:hover
-						background: $yellow
-						color: #FFF
-
-						&:after
-							color: fade_out(#FFF, .5)
-							content: attr(data-site)
-							font-size: 1rem
-							position: absolute
-							left: 0
-							right: 0
-							margin-left: auto
-							margin-right: auto
-
-					i 
-						font-size: 3rem
-						display: block
 
 	&[id="about"]
-		padding: 0 0 22%
+		padding: 0 0 10%
 
 		.container
 			display: block
 
-			a
+			[id="bio"]
 				border-bottom: none
 				display: block
 				overflow: hidden
@@ -235,6 +224,13 @@ section
 					float: left
 					padding: 0 10% 0 0
 					width: 85%
+
+					&.active
+						//color: shade(fade_out($yellow, .5), 20)
+						color: fade_out($yellow, .5)
+
+						&:hover
+							color: fade_out($primary, .5)
 
 				.more
 					float: left
@@ -254,43 +250,101 @@ section
 				p, span
 					margin: 16px 0
 
-					del 
-						position: relative
-						text-decoration: none
+					// del 
+					// 	position: relative
+					// 	text-decoration: none
 
-						&::after
-							content: ""
-							position: absolute
-							top: 50%
-							left: 0
-							right: 0
-							border-bottom: 4px ridge fade_out($yellow, .55)
+					// 	&::after
+					// 		content: ""
+					// 		position: absolute
+					// 		top: 50%
+					// 		left: 0
+					// 		right: 0
+					// 		border-bottom: 4px ridge fade_out($yellow, .55)
 
-					&.divider
-						text-align: center
+					// &.divider
+					// 	text-align: center
+
+					// 	i 
+					// 		font-size: 6rem
+
+		> .social // change position to fixed to hide behind following section
+			@extend .fadein
+			//background: shade($bg, 38)
+			background: shade($bg, 30)
+			border-radius: 2px
+			color: $bg
+			height: 50px
+			text-align: center
+			width: 78%
+
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			margin-left: auto
+			margin-right: auto
+
+			&:hover
+				//background: shade($bg, 8)
+				height: 80px
+
+				a // general hover state
+					color: $text
+					padding: 25px 0 40px
+
+			ul
+				display: flex
+				list-style: none
+				margin: 0 auto
+				max-width: 800px
+
+				li
+					flex: 1
+					position: relative
+
+					a // regular state
+						@extend .fadein
+						border-bottom: none
+						color: fade_out($primary, .5)
+						display: block
+						height: 100%
+						padding: 10px 0
+							
+						&:hover // actual hover
+							background: $yellow
+							color: #FFF
+							padding: 20px 0 30px
+
+							&:after
+								color: fade_out(#FFF, .5)
+								content: attr(data-site)
+								font-size: 1rem
+								position: absolute
+								left: 0
+								right: 0
+								bottom: 35px
+								margin-left: auto
+								margin-right: auto
 
 						i 
-							font-size: 6rem
+							font-size: 3rem
+							display: block
 
 	&[id="capabilities"]
 		//background: shade($bg, 5)
 		//background: shade($yellow, 20)
-		+background-image(linear-gradient(left top, #796A4A 0%, #675a3f 100%))
-		color: shade($yellow, 60)
-		padding: 12% 0
+		//+background-image(linear-gradient(left top, shade($yellow, 40) 0%, shade($yellow, 50) 100%))
+		+background-image(linear-gradient(left top, $primary, $bg))
+		color: tint($primary, 30)
 
 		.container
 			//max-width: 60%
-			max-width: 80%
-
-			h2
-				color: #FFF
-				font-size: 2rem
-				margin-bottom: 20px
+			//max-width: 78%
 
 			.flex
 				div
-					flex: 2
+					flex: 1
 					font-size: 1.3rem
 					line-height: 2.8rem
 					
@@ -298,18 +352,23 @@ section
 						//padding-left: 5% // equal out perceived spacing between divs
 
 					strong
-						color: #FFF
+						color: tint($primary, 30)
 
 					ul
 						list-style-position: inside
 
 						li
 							&:after
-								color: shade($yellow, 42)
+								color: tint($primary, 10)
 								content: attr(data-tools)
 
-							ul 
-								color: shade($yellow, 42)
+							a
+								@extend .fadein
+								&:hover
+									color: $yellow
+
+							ul
+								color: tint($primary, 10)
 								line-height: 2.25rem
 
 								li
@@ -324,37 +383,126 @@ section
 		// 	width: 500px
 
 	&[id="design"]
-		display: none
+		//display: none
+		+background-image(linear-gradient(left top, shade($yellow, 10), shade($yellow, 30)))
+
+		h2 
+			max-width: 800px
+			margin: 0 auto 40px
+
+			.view
+				@extend .fadein
+				border: 2px solid $yellow
+				border-radius: 2px
+				color: #FFF
+				font-size: .9rem
+				font-weight: 900
+				margin-left: 20px
+				padding: 4px 10px
+				text-transform: uppercase
+				vertical-align: 5px
+
+				i
+					font-size: 2.5rem
+					margin-left: 5px
+					vertical-align: -3px
+
+			a 
+				@extend .fadein
+				border-bottom: none
+				color: #FFF
+
+				&:hover
+					border-bottom-color: $yellow
+
+					.view
+						border-color: #FFF
+						//color: #FFF
+						margin-left: 40px
+
+		[id="dribbble"], [id="codepen"]
+			margin: 0 auto 40px
+			max-width: 68%
 
 		[id="dribbble"]
-			margin: 10px 0
 
-			li 
-				display: inline
+			&::after
+				border-bottom: 2px solid $yellow
+				content: ""
+				display: block
+				padding-top: 6%
+
+			ul
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-around
 				list-style: none
-				float: left
-				
-				a
-					display: inline-block
-					position: relative
 
-					img 
-						display: inline-block
-						width: 100%
+				li 
+					flex: 0 1 calc(25% - 3px)
+					margin-bottom: 3px
 
-					&::after
-						@extend .fadein
-						content: "\a0"
-						opacity: .85
-						position: absolute
-						top: -1px
-						left: 0
-						width: 100.5%
-						height: 100%
-						background: $bg
-						overflow: hidden
-						z-index: 3
+					&:not(:nth-child(4n + 4))
+						margin-right: 3px
 
-					&:hover::after
-						opacity: .25
+					a
+						border-bottom: none
+						border-radius: 2
+						display: block
+						height: 165px
 
+						&:hover
+							img
+								@include scale(1.05)
+								opacity: 1
+								z-index: 2
+
+						img
+							@extend .fadein
+							border-radius: 2px
+							opacity: .5
+							width: 100%
+							position: relative
+
+		[id="codepen"]
+
+footer
+	.social
+		ul
+			display: flex
+			list-style: none
+			margin: 0 auto
+			max-width: 800px
+
+			li
+				flex: 1
+				position: relative
+
+				a // regular state
+					@extend .fadein
+					border-bottom: none
+					color: fade_out($primary, .5)
+					display: block
+					height: 100%
+					text-align: center
+					padding: 10px 0
+						
+					&:hover // actual hover
+						background: $yellow
+						color: #FFF
+						padding: 20px 0 30px
+
+						&:after
+							color: fade_out(#FFF, .5)
+							content: attr(data-site)
+							font-size: 1rem
+							position: absolute
+							left: 0
+							right: 0
+							bottom: 35px
+							margin-left: auto
+							margin-right: auto
+
+					i 
+						font-size: 3rem
+						display: block

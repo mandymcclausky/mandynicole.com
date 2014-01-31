@@ -8,7 +8,6 @@ $(document).ready(function() {
 	// typewrite.js
 	$(tagline).typewrite();
 
-
 	// letterhead hover
 	$("header h1").hover(
 		function() {
@@ -37,6 +36,7 @@ $(document).ready(function() {
 
 	// manipulate .more onClick
 	function open() {
+		$(this).find(".callout").addClass("active");
 		$(container).slideDown(600);
 		$(content).hide().delay(300).fadeIn(400);
 		$(text).text("Close");
@@ -44,6 +44,7 @@ $(document).ready(function() {
 		$(this).one("click", close);
 	}
 	function close() {
+		$(this).find(".callout").removeClass("active");
 		$(content).fadeOut(200);
 		$(container).delay(200).slideUp(400);
 		$(text).text("More");
@@ -53,21 +54,23 @@ $(document).ready(function() {
 
 	$("#about #bio").one("click", open);
 
-
 	//jRibbble
 	var callback = function (playerShots) {
 	var html = '';
+
 	$.each(playerShots.shots,
 		function (i, shot) {
 			html += '<li>';
 			html += '<a href="' + shot.url + '">';
 			html += '<img src="' + shot.image_url + '" ';
-			html += 'alt="' + shot.title + '"></a>';
+			html += 'alt="' + shot.title + '" freezeframe /></a>';
 		});
 
-		$('#dribbble').html(html);
+		$('#dribbble').html("<ul>" + html + "</ul>");
 	};
 
-	$.jribbble.getShotsByPlayerId('mandynicole', callback, {page: 1, per_page: 4});
-
+	$.jribbble.getShotsByPlayerId('mandynicole', callback, {
+		page: 1,
+		per_page: 8
+	});
 });

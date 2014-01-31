@@ -4,25 +4,34 @@
 		<title>Whee</title>
 
 		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-		<script type="text/javascript" src="js/js.js"></script>
-		
-		<script src="https://rawgithub.com/tylergaw/jribbble/master/src/jribbble.js"></script>
-		<script src="js/typewrite.js"></script>
+
+		<script src="js/js.js" type="text/javascript"></script>
+		<script src="js/typewrite.js" type="text/javascript"></script>
+		<script src="js/jribbble.js" type="text/javascript"></script>
 
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet" type="text/css">
-		<link rel="stylesheet" href="stylesheets/style.css">
 
+		<link rel="stylesheet" href="stylesheets/style.css">
 	</head>
 
 	<body>
+
+		<!-- <nav>
+			<ul>
+				<li>Tools &amp; Capabilities
+				<li>Dribbble
+				<li>Codepen
+				<li>Get in Touch
+			</ul>
+		</nav> -->
 		
 		<div class="container">
 			<header>
 				<h1>
 					<span class="box">M<sup>2</sup></span> <span class="tagline" data-who="is Mandy McClausky">design, code, and stuff</span>
 				</h1>
-			</header>
-		</div>
+			</header> <!-- header -->
+		</div> <!-- .container -->
 
 		<section id="about">
 			<div class="container">
@@ -36,8 +45,8 @@
 						<p>I've been building things on the web for 15 years. I love every aspect of the process &mdash; from wireframing and building prototypes based on UX maps, to experimenting with new technologies and running user tests.
 
 						<p>While I prefer to design in the browser whenever possible, I'm exceptionally versed in Photoshop and Illustrator and have several years of experience working in print as well. 
-				</div> <!-- details -->
-			</div> <!-- container -->
+				</div> <!-- .details -->
+			</div> <!-- .container -->
 
 			<div class="social">
 				<ul>
@@ -69,8 +78,8 @@
 						<a href="#" data-site="SoundCloud"><i class="social icon">&#62280;</i></a>
 					</li>
 				</ul>
-			</div> <!-- social -->
-		</section> <!-- about -->
+			</div> <!-- .social -->
+		</section> <!-- #about -->
 
 		<section id="capabilities">
 			<div class="container">
@@ -80,55 +89,92 @@
 				<div class="flex">
 
 					<div class="what">
-						<strong>Web &amp; Mobile</strong>
 						<ul>
 							<li>Wireframing
 							<li>High-fidelity Prototyping 
-							<li>Interactive Prototyping 
+							<li>Interactive Prototyping
 							<li>Front-end Design
 								<ul>
 									<li>HTML
 									<li>CSS (Sass/LESS/Stylus)
 									<li>jQuery
 								</ul>
+							<li>HTML Emails
+							<li>Icon, Logo &amp; Type Design
+							<li>Copywriting
 						</ul>
-					</div>
-					<div class="tools">
-						<strong>Tools</strong>
+					</div> <!-- .what -->
+
+					<div class="how">
 						<ul>
 							<li>Sublime Text 2
-							<li data-tools="(Compass.app)">Compass
-							<li data-tools="(Tower.app, GitHub.app)">Git
-							<li><a href="http://www.eigenlogik.com/spectrum/mac">Spectrum</a>
+							<li data-tools="(Tower.app, GitHub.app, CLI)">Git
+							<li><a href="http://compass-style.org/" target="_blank">Compass
+							<li><a href="http://www.eigenlogik.com/spectrum/mac" target="_blank">Spectrum</a>
+							<li><a href="http://xscopeapp.com/" target="_blank">XScope</a>
 							<li>Photoshop
 							<li>Illustrator
 							<li>InDesign
 							<li>OS X
 							<li>Windows 7
 						</ul>
-					</div>
-					<div class="misc">
-						<strong>Misc</strong>
-						<ul>
-							<li>Icon, Logo &amp; Type Design
-							<li>Copywriting
-						</ul>
-					</div>
+					</div> <!-- .how -->
 
-				</div> <!-- flex -->
-
-			</div> <!-- container -->
-		</section>
+				</div> <!-- .flex -->
+			</div> <!-- .container -->
+		</section> <!-- #capabilities -->
 
 		<section id="design">
-			<h2><a href="http://dribbbleboard.com/#mandynicole" target="_blank">Dribbble</a> &mdash;</h2>
+			<!-- <h2>.. on <a href="http://dribbbleboard.com/#mandynicole" target="_blank">Dribbble</a> &mdash;</h2> -->
+			<h2><a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank">Dribbble <span class="view">view <i class="icon">&#59230;</i></span></a></h2>
 			<div id="dribbble"></div>
-		</section> <!-- design -->
+
+			<h2><a href="http://codepen.io/mandymcclausky/" target="_blank">Codepen <span class="view">view <i class="icon">&#59230;</i></span></h2></a>
+			
+			<div id="codepen">
+				<p data-height="340" data-theme-id="1713" data-slug-hash="cfuHk" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/cfuHk'>SVG + JS Manipulation : 1</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+				<p data-height="340" data-theme-id="1713" data-slug-hash="CKvyD" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/CKvyD'>SVG + CSS : Animate In</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+				
+				<p data-height="340" data-theme-id="1713" data-slug-hash="cELet" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/cELet'>Pagination : Almost Tabs</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+				<script async src="//codepen.io/assets/embed/ei.js"></script>
+			</div> <!-- #codepen -->
+		</section> <!-- #design -->
 
 		<footer>
 			<div class="container">
+				<div class="social">
+					<ul>
+						<li>
+							<a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank"><i class="social icon">&#62235;</i></a>
+						</li>
+						
+						<li>
+							<a href="http://www.github.com/mandymcclausky" data-site="Github" target="_blank"><i class="social icon">&#62208;</i></a>
+						</li>
 
-			</div>
+						<li>
+							<a href="http://http://www.linkedin.com/profile/view?id=78120173" data-site="Linkedin" target="_blank"><i class="social icon">&#62232;</i></a>
+						</li>
+
+						<li>
+							<a href="#" data-site="Google+"><i class="social icon">&#62223;</i></a>
+						</li>
+
+						<li>
+							<a href="#" data-site="Last.fm"><i class="social icon">&#62241;</i></a>
+						</li>
+
+						<li>
+							<a href="#" data-site="Rdio"><i class="social icon">&#62244;</i></a>
+						</li>
+
+						<li>
+							<a href="#" data-site="SoundCloud"><i class="social icon">&#62280;</i></a>
+						</li>
+					</ul>
+				</div> <!-- .social -->
+			</div> <!-- .container -->
 		</footer>
 	</body>
 </html>

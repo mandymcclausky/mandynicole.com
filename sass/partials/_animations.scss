@@ -1,11 +1,10 @@
 @import "mixins";
 @import "variables";
 
-// PROJECT SPECIFIC
+// mixin
 
-@include keyframes(logo-dash) {
-  0% { stroke-dashoffset: -240; }
-  100% {  }
+@mixin animated($name: fadeIn, $duration: 1s, $delay: 0.2s, $function: ease, $mode: both) {
+  @include experimental(animation, $name $duration $delay $function $mode);
 }
 
 // ALL
@@ -34,3 +33,24 @@
 }
 
 .twinkle { @include animation(twinkle, .5s, 0s, infinite); }
+
+@include keyframes (fadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes (fadeInUp) {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
