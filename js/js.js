@@ -1,38 +1,34 @@
 $(document).ready(function() {
 
-	// tagline variables
+	// .tagline .typewrite()
 	var tagline = $(".tagline"),
-			original = tagline.clone(true),
-			who = tagline.attr("data-who");
+      original = $(tagline).html();
+      who = $(tagline).attr("data-who");
 
-	// typewrite.js
-	$(tagline).typewrite();
+    $(tagline).typewrite();
 
-	// letterhead hover
-	$("header h1").hover(
-		function() {
-			tagline.remove();
-			$(this).append(tagline.html(who).typewrite());
-		}, function() {
-			tagline.remove();
-			$(this).append(tagline.html(original).typewrite());
-		}
-	);
-
-	// $(document).on('mouseenter', 'header',
-	// 	function() {
-	// 		tagline.html(who).stop().typewrite();
-	// 	});
-	// $(document).on('mouseleave', 'header',
-	// 	function() {
-	// 		tagline.html( tagline.data(original) );
-	// 	});
+    var write = function( phrase ){
+        var span = $("<span></span>");
+        tagline.html( span );
+        span.text( phrase ).typewrite();
+    };
+    
+    write( original );
+    
+    $("header h1").hover(
+        function() {
+            write( who );
+        }, function() {
+            write( original );
+        }
+    );
+	// above refactored with help Tim Kempf @ kempfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.info
 
 	// .more buttons variables
 	var container = $(".details"),
 			content = $(".details p"),
 			text = $(".more .text"),
-			icon = $(".more .icon");
+			icon = $(".more i");
 
 	// manipulate .more onClick
 	function open() {
@@ -40,7 +36,7 @@ $(document).ready(function() {
 		$(container).slideDown(600);
 		$(content).hide().delay(300).fadeIn(400);
 		$(text).text("Close");
-		$(icon).html("&#10060;");
+		$(icon).attr("class", "icon-close").stop();
 		$(this).one("click", close);
 	}
 	function close() {
@@ -48,29 +44,10 @@ $(document).ready(function() {
 		$(content).fadeOut(200);
 		$(container).delay(200).slideUp(400);
 		$(text).text("More");
-		$(icon).html("&#59228;");
+		$(icon).attr("class", "icon-down");
 		$(this).one("click", open);
 	}
 
 	$("#about #bio").one("click", open);
 
-	//jRibbble
-	var callback = function (playerShots) {
-	var html = '';
-
-	$.each(playerShots.shots,
-		function (i, shot) {
-			html += '<li>';
-			html += '<a href="' + shot.url + '">';
-			html += '<img src="' + shot.image_url + '" ';
-			html += 'alt="' + shot.title + '" freezeframe /></a>';
-		});
-
-		$('#dribbble').html("<ul>" + html + "</ul>");
-	};
-
-	$.jribbble.getShotsByPlayerId('mandynicole', callback, {
-		page: 1,
-		per_page: 8
-	});
 });

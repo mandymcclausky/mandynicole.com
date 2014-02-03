@@ -1,6 +1,182 @@
 @import compass
 
+@import partials/flexbox
 @import partials/mixins
 @import partials/variables
 
-@media all and (max-width: 770px)
+// 860px
+@media all and (max-width: 860px)
+
+	.container
+		padding: 0 10% !important
+
+	header 
+		padding-top: 10% !important
+
+	section
+
+		&[id="about"]
+
+			.callout
+				padding: 0 10px 0 0 !important
+				width: 100% !important
+
+			button.more
+				clear: both !important
+				float: right !important
+				width: 25% !important
+
+		&[id="capabilities"]
+			min-height: 60% !important
+			h2 
+
+			ul
+				> li 
+					font-size: 1.2rem !important
+					line-height: 2.2rem !important
+
+					ul 
+						margin-top: 5px !important
+
+						li 
+							line-height: 2.8rem !important
+
+		&[id="contact"]
+			min-height: 60% !important
+
+			p 
+				font-size: 2.2rem !important
+				line-height: 3.2rem !important
+
+// 600px
+@media all and (max-width: 600px)
+
+	section
+		&[id="about"]
+			min-height: 20% !important
+
+			a[id="bio"]
+				pointer-events: none !important 
+
+				.callout
+					font-size: 2.2rem !important
+					line-height: 3.2rem !important
+
+				button.more
+					display: none !important
+
+		&[id="capabilities"]
+			min-height: 50% !important
+
+			.container
+				//padding: 10% inherit !important
+
+				h2
+					font-size: 2.2rem !important
+
+				ul
+					li 
+						font-size: 1.2rem !important
+						line-height: 2.2rem !important
+
+						ul
+							li 
+								line-height: 2.8rem !important
+
+				.what
+					margin-bottom: 5% !important
+
+		&[id="contact"]
+			min-height: 40% !important
+
+			p 
+				font-size: 1.8rem !important
+				line-height: 2.8rem !important
+
+// 530px
+@media all and (max-width: 530px)
+	
+
+	section
+
+		&[id="capabilities"]
+			padding: 4% 10% !important
+			min-width: 30% !important
+
+			.container
+				// @include flex-flow(wrap) !important // why isn't this working
+				margin: 0 auto !important
+		&[id="contact"]
+
+			p 
+				font-size: 1.6rem !important
+				line-height: 2.6rem !important
+
+// 460px
+@media all and (max-width: 460px)
+	section
+		&[id="about"]
+			a[id="bio"]
+				.callout
+					font-size: 1.8rem !important
+					line-height: 2.8rem !important
+
+		&[id="contact"]
+			p 
+				font-size: 1.3rem !important
+				font-weight: 500 !important
+				line-height: 2rem !important
+
+// 400px
+@media all and (max-width: 400px)
+	section
+		&[id="contact"]
+			min-height: 30% !important
+			p 
+				font-size: 1.2rem !important
+
+// 360px
+@media all and (max-width: 360px)
+	section
+		&[id="capabilities"]
+			min-height: 40% !important
+
+			p 
+				font-size: 1.5rem !important
+				line-height: 2.3rem !important
+			ul 
+				li
+					&:after
+						content: "" !important
+
+		&[id="contact"]
+			p 
+				font-size: 1.1rem !important
+				line-height: 2rem !important
+	
+// 320px
+@media all and (max-width: 320px)
+	section
+		&[id="about"]
+			a[id="bio"]
+				.callout
+					font-size: 1.6rem !important
+					font-weight: 500 !important
+					line-height: 2.2rem !important
+					padding-top: 10px !important
+
+		&[id="capabilities"]
+			padding: 8% !important
+
+			.container
+				h2
+					font-size: 1.6rem !important
+					font-weight: 500 !important
+
+		&[id="contact"]
+			min-height: 20% !important
+
+			p 
+				font-size: 1rem !important
+				line-height: 1.8rem !important
+

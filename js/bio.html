@@ -68,3 +68,41 @@ aside
 		i 
 			color: $bg
 			font-size: 3rem
+
+
+<section id="design">
+	<h2>.. on <a href="http://dribbbleboard.com/#mandynicole" target="_blank">Dribbble</a> &mdash;</h2>
+	<h2><a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank">Dribbble <span class="view">view <i class="icon">&#59230;</i></span></a></h2>
+	<div id="dribbble"></div>
+
+	<h2><a href="http://codepen.io/mandymcclausky/" target="_blank">Codepen <span class="view">view <i class="icon">&#59230;</i></span></h2></a>
+	
+	<div id="codepen">
+		<p data-height="340" data-theme-id="1713" data-slug-hash="cfuHk" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/cfuHk'>SVG + JS Manipulation : 1</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+		<p data-height="320" data-theme-id="1713" data-slug-hash="CKvyD" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/CKvyD'>SVG + CSS : Animate In</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		
+		<p data-height="194" data-theme-id="1713" data-slug-hash="cELet" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/cELet'>Pagination : Almost Tabs</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<script async src="//codepen.io/assets/embed/ei.js"></script>
+	</div> <!-- #codepen -->
+</section> <!-- #design -->
+
+	//jRibbble
+	var callback = function (playerShots) {
+	var html = '';
+
+	$.each(playerShots.shots,
+		function (i, shot) {
+			html += '<li>';
+			html += '<a href="' + shot.url + '">';
+			html += '<img src="' + shot.image_url + '" ';
+			html += 'alt="' + shot.title + '" freezeframe /></a>';
+		});
+
+		$('#dribbble').html("<ul>" + html + "</ul>");
+	};
+
+	$.jribbble.getShotsByPlayerId('mandynicole', callback, {
+		page: 1,
+		per_page: 8
+	});

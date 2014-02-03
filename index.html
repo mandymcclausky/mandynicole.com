@@ -7,38 +7,67 @@
 
 		<script src="js/js.js" type="text/javascript"></script>
 		<script src="js/typewrite.js" type="text/javascript"></script>
-		<script src="js/jribbble.js" type="text/javascript"></script>
 
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet" type="text/css">
 
 		<link rel="stylesheet" href="stylesheets/style.css">
+
+		<!-- <script>
+		$(document).ready(function(e) {
+		  showViewportSize();    
+		});
+
+		$(window).resize(function(e) {
+		  showViewportSize();
+		});
+
+		function showViewportSize() {
+		  var the_width = $(window).width();
+		  var the_height = $(window).height();
+		  
+		  $("#width").text(the_width);
+		  $("#height").text(the_height);
+		}
+		</script>
+
+		<style>
+			.window-size { 
+			  background: #FCFCFC;
+			  box-shadow: inset 0 0 2px 0 rgba(0,0,0,.09);
+			  color: #555;
+			  position: absolute;
+			  bottom: 0; 
+			  padding: 10px 20px;
+			  width: 100%;
+			  z-index: 10;
+			}
+
+			.window-size .width,
+			.window-size .height { 
+			  float: left;
+			  font-size: 13px;
+			  text-align: center;
+			  text-transform: uppercase;
+			  width: 50%;
+			}
+		</style> -->
+		
 	</head>
 
 	<body>
 
-		<!-- <nav>
-			<ul>
-				<li>Tools &amp; Capabilities
-				<li>Dribbble
-				<li>Codepen
-				<li>Get in Touch
-			</ul>
-		</nav> -->
-		
-		<div class="container">
-			<header>
-				<h1>
-					<span class="box">M<sup>2</sup></span> <span class="tagline" data-who="is Mandy McClausky">design, code, and stuff</span>
-				</h1>
-			</header> <!-- header -->
-		</div> <!-- .container -->
+		<header>
+			<h1>
+				<span class="box">M<sup>2</sup></span> <span class="tagline" data-who="is Mandy McClausky">design, code, and stuff</span>
+			</h1>
+		</header> <!-- header -->
 
 		<section id="about">
 			<div class="container">
 				<a id="bio" href="#">
 					<p class="callout">Mandy is a multi-disciplinary designer based in beautiful Portland, OR.</p>
 
-					<button class="more"><span class="text">more</span> <i class="icon">&#59228;</i></button>
+					<button class="more"><span class="text">more</span> <i class="icon-down"></i></button>
 				</a>
 
 				<div class="details">
@@ -50,131 +79,116 @@
 
 			<div class="social">
 				<ul>
-					<li>
-						<a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank"><i class="social icon">&#62235;</i></a>
-					</li>
+					<li><a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank"><i class="icon-dribbble"></i></a></li>
 					
-					<li>
-						<a href="http://www.github.com/mandymcclausky" data-site="Github" target="_blank"><i class="social icon">&#62208;</i></a>
-					</li>
+					<li><a href="http://www.github.com/mandymcclausky" data-site="Github" target="_blank"><i class="icon-github"></i></a></li>
 
-					<li>
-						<a href="http://http://www.linkedin.com/profile/view?id=78120173" data-site="Linkedin" target="_blank"><i class="social icon">&#62232;</i></a>
-					</li>
+					<li><a href="http://www.codepen.com/mandymcclausky" data-site="Codepen" target="_blank"><i class="icon-codepen"></i></a></li>
 
-					<li>
-						<a href="#" data-site="Google+"><i class="social icon">&#62223;</i></a>
-					</li>
+					<li><a href="https://kippt.com/mandy" data-site="Kippt" target="_blank"><i class="icon-kippt"></i></a></li>
 
-					<li>
-						<a href="#" data-site="Last.fm"><i class="social icon">&#62241;</i></a>
-					</li>
+					<li><a href="http://http://www.linkedin.com/profile/view?id=78120173" data-site="Linkedin" target="_blank"><i class="icon-linkedin"></i></a></li>
 
-					<li>
-						<a href="#" data-site="Rdio"><i class="social icon">&#62244;</i></a>
-					</li>
+					<li><a href="https://plus.google.com/u/0/+MandyMcClausky/" data-site="Google+" target="_blank"><i class="icon-gplus"></i></a></li>
 
-					<li>
-						<a href="#" data-site="SoundCloud"><i class="social icon">&#62280;</i></a>
-					</li>
+					<li><a href="http://www.last.fm/user/mandalyn" data-site="Last.fm" target="_blank"><i class="icon-lastfm"></i></a></li>
+
+					<li><a href="http://www.rdio.com/people/mandynicole/" data-site="Rdio" target="_blank"><i class="icon-rdio"></i></a></li>
+
+					<li><a href="https://soundcloud.com/mandynicole" data-site="SoundCloud" target="_blank"><i class="icon-soundcloud"></i></a></li>
 				</ul>
 			</div> <!-- .social -->
 		</section> <!-- #about -->
 
 		<section id="capabilities">
 			<div class="container">
-
 				<h2>Capabilities &amp; Tools</h2>
+				<div class="what">
+					<ul>
+						<li>Wireframing
+						<li>High-fidelity Prototyping 
+						<li data-tools="(Axure, jQuery)">Interactive Prototyping
+						<li>Front-end Design
+							<ul>
+								<li>HTML
+								<li>CSS (Sass/Stylus/LESS)
+							</ul>
+						<li>HTML Emails
+						<li>Icon, Logo &amp; Type Design
+						<li>Copywriting
+					</ul>
+				</div> <!-- .what -->
 
-				<div class="flex">
+				<div class="how">
+					<ul>
+						<li>Sublime Text 2
+						<li data-tools="(Tower.app, GitHub.app, CLI)">Git
+						<li><a href="http://compass-style.org/" target="_blank">Compass
+						<li><a href="http://www.eigenlogik.com/spectrum/mac" target="_blank">Spectrum</a>
+						<li><a href="http://xscopeapp.com/" target="_blank">XScope</a>
+						<li>Photoshop
+						<li>Illustrator
+						<li>InDesign
+						<li>OS X
+						<li>Windows 7
+					</ul>
 
-					<div class="what">
-						<ul>
-							<li>Wireframing
-							<li>High-fidelity Prototyping 
-							<li>Interactive Prototyping
-							<li>Front-end Design
-								<ul>
-									<li>HTML
-									<li>CSS (Sass/LESS/Stylus)
-									<li>jQuery
-								</ul>
-							<li>HTML Emails
-							<li>Icon, Logo &amp; Type Design
-							<li>Copywriting
-						</ul>
-					</div> <!-- .what -->
-
-					<div class="how">
-						<ul>
-							<li>Sublime Text 2
-							<li data-tools="(Tower.app, GitHub.app, CLI)">Git
-							<li><a href="http://compass-style.org/" target="_blank">Compass
-							<li><a href="http://www.eigenlogik.com/spectrum/mac" target="_blank">Spectrum</a>
-							<li><a href="http://xscopeapp.com/" target="_blank">XScope</a>
-							<li>Photoshop
-							<li>Illustrator
-							<li>InDesign
-							<li>OS X
-							<li>Windows 7
-						</ul>
-					</div> <!-- .how -->
-
-				</div> <!-- .flex -->
+				</div> <!-- .how -->
 			</div> <!-- .container -->
 		</section> <!-- #capabilities -->
 
-		<section id="design">
-			<!-- <h2>.. on <a href="http://dribbbleboard.com/#mandynicole" target="_blank">Dribbble</a> &mdash;</h2> -->
-			<h2><a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank">Dribbble <span class="view">view <i class="icon">&#59230;</i></span></a></h2>
-			<div id="dribbble"></div>
-
-			<h2><a href="http://codepen.io/mandymcclausky/" target="_blank">Codepen <span class="view">view <i class="icon">&#59230;</i></span></h2></a>
-			
-			<div id="codepen">
-				<p data-height="340" data-theme-id="1713" data-slug-hash="cfuHk" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/cfuHk'>SVG + JS Manipulation : 1</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-
-				<p data-height="340" data-theme-id="1713" data-slug-hash="CKvyD" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/CKvyD'>SVG + CSS : Animate In</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-				
-				<p data-height="340" data-theme-id="1713" data-slug-hash="cELet" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/mandymcclausky/pen/cELet'>Pagination : Almost Tabs</a> by Mandy McClausky (<a href='http://codepen.io/mandymcclausky'>@mandymcclausky</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-				<script async src="//codepen.io/assets/embed/ei.js"></script>
-			</div> <!-- #codepen -->
-		</section> <!-- #design -->
+		<section id="contact">
+				<p>I'm always looking for new opportunities to learn and meet <br />
+				awesome people. If you think I'd be a good fit for your <br />
+				project/team/weekend hackathon &mdash; <br /> 
+				<a href="mailto:me&#64;mandynicole.com">I'd love to hear from you!</a></p>
+		</section>
 
 		<footer>
-			<div class="container">
-				<div class="social">
-					<ul>
-						<li>
-							<a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank"><i class="social icon">&#62235;</i></a>
-						</li>
-						
-						<li>
-							<a href="http://www.github.com/mandymcclausky" data-site="Github" target="_blank"><i class="social icon">&#62208;</i></a>
-						</li>
-
-						<li>
-							<a href="http://http://www.linkedin.com/profile/view?id=78120173" data-site="Linkedin" target="_blank"><i class="social icon">&#62232;</i></a>
-						</li>
-
-						<li>
-							<a href="#" data-site="Google+"><i class="social icon">&#62223;</i></a>
-						</li>
-
-						<li>
-							<a href="#" data-site="Last.fm"><i class="social icon">&#62241;</i></a>
-						</li>
-
-						<li>
-							<a href="#" data-site="Rdio"><i class="social icon">&#62244;</i></a>
-						</li>
-
-						<li>
-							<a href="#" data-site="SoundCloud"><i class="social icon">&#62280;</i></a>
-						</li>
-					</ul>
-				</div> <!-- .social -->
-			</div> <!-- .container -->
+			<p class="copyright">&copy; Mandy McClausky 2014</p>
 		</footer>
+
+
+		<section class="oops">
+			<h2>As Chrome would say, "Well, this is embarrassing.."</h2>
+			<p>If you're seeing this message, it's because this site utilizes <code>display: flex</code>, and unfortunately Firefox &mdash; and legacy browsers if that's the tragic state of your IT policy &mdash; <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=702508">won't be supporting</a> the <code>flexbox-wrap</code> feature (which is kind of a big deal) until FF29, currently scheduled to release <a href="https://wiki.mozilla.org/RapidRelease/Calendar">at the end of April 2014</a>. Even IE11 has already fully-implemented the spec. Ouch!</p>
+
+			<p>While the necessary fallbacks are in place for older implementations of flexbox, there's no non-hacky way to get Firefox to cooperate right now and honestly I'm just not in the mood to deal with it with the fix coming so soon and every other modern browser being able to handle it already. Sorry!</p>
+
+			<p>Even though I'm sure you have another browser installed, if you're feeling lazy, here's some quick info and links &mdash;
+
+			<p class="callout">I'm Mandy, a multi-discplinary designer in Portland, OR. Pleased to meet you!</p>
+
+			<ul>
+				<li><a href="http://www.dribbble.com/mandynicole" data-site="Dribbble" target="_blank"><i class="icon-dribbble"></i></a></li>
+					
+					<li><a href="http://www.github.com/mandymcclausky" data-site="Github" target="_blank"><i class="icon-github"></i></a></li>
+
+					<li><a href="http://www.codepen.com/mandymcclausky" data-site="Codepen" target="_blank"><i class="icon-codepen"></i></a></li>
+
+					<li><a href="https://kippt.com/mandy" data-site="Kippt" target="_blank"><i class="icon-kippt"></i></a></li>
+
+					<li><a href="http://http://www.linkedin.com/profile/view?id=78120173" data-site="Linkedin" target="_blank"><i class="icon-linkedin"></i></a></li>
+
+					<li><a href="https://plus.google.com/u/0/+MandyMcClausky/" data-site="Google+" target="_blank"><i class="icon-gplus"></i></a></li>
+
+					<li><a href="http://www.last.fm/user/mandalyn" data-site="Last.fm" target="_blank"><i class="icon-lastfm"></i></a></li>
+
+					<li><a href="http://www.rdio.com/people/mandynicole/" data-site="Rdio" target="_blank"><i class="icon-rdio"></i></a></li>
+
+					<li><a href="https://soundcloud.com/mandynicole" data-site="SoundCloud" target="_blank"><i class="icon-soundcloud"></i></a></li>
+				</ul>
+			</p>
+		</section>
+
+
+		<!-- <div class="window-size">
+			<span class="width">W: <strong id="width">[width]</strong></span>
+
+			<span class="height">H: <strong id="height">[height]</strong></span>
+		</div> -->
+
+
+
 	</body>
 </html>

@@ -2,13 +2,14 @@
 
 @import partials/animations
 @import partials/defaults
+@import partials/flexbox
 @import partials/fonts
 @import partials/mixins
 @import partials/variables
 
 @import breakpoints
 
-// Animations
+// ANIMATIONS
 
 header
 	+animated(fadeIn, 4s, 0s)
@@ -18,71 +19,113 @@ section
 	&[id="about"]
 		+animated(fadeIn, 2s, 2s)
 	// everything else but .social
-	&:not([id="about"])
+	&:not([id="about"]):not(.oops)
 		+animated(fadeInUp, 2s, 2.6s)
 	// social bar
 	&[id="about"] > .social
 		+animated(fadeInUp, 2s, 3.8s)
 
+// EXTENDS
+
+.flex
+	@include display-flex() // display: flex
+	@include align-content(center) // align-content: center
+	@include align-items(baseline) // align-items: baseline
+	@include justify-content(space-between) // justify-content: space-between
+
+// FIREFOX'S DUMB FLEXBOX FIX
+
+@supports not (flex-wrap: wrap)
+	body
+		> *:not(.oops)
+			display: none
+		.oops
+			display: block
+
+.social // change position to fixed to hide behind following section on scroll when absopos
+	@extend .fadein
+	//background: shade($bg, 38)
+	border-radius: 2px
+	height: 50px
+	text-align: center
+
+	ul
+		@extend .flex
+		@include align-content(flex-start)
+		height: 100%
+		list-style: none
+		margin: 0 auto
+		max-width: 800px
+
+		li
+			@include flex(1)
+			height: 100%
+
+			a 
+				height: 100%
+
+				i 
+					font-size: 1.75rem
+					display: block
+
+// STYLES
+
 html
 	font-size: 62.5% // rem to px
+	overflow: hidden
 	
 html, body
 	font-family: "Open Sans", Helvetica, sans-serif
 	//height: 100%
-	margin: 0
-	padding: 0
 
 body
 	background: shade($bg, 20) url(/img/bg2.jpg) center 40%
 	background-attachment: scroll
 	background-repeat: no-repeat
 	color: $text
+	overflow: scroll
 
-nav
-	@extend .fadein
-	border: 2px solid $bg
-	border-radius: 2px
-	color: $bg
-	height: 50px
-	text-align: center
-	width: 78%
+// nav
+// 	@extend .fadein
+// 	border: 2px solid $bg
+// 	border-radius: 2px
+// 	color: $bg
+// 	height: 50px
+// 	text-align: center
+// 	width: 78%
 
-	position: fixed
-	z-index: 2
-	left: 0
-	right: 0
-	margin-left: auto
-	margin-right: auto
-	top: 40px
+// 	position: fixed
+// 	z-index: 2
+// 	left: 0
+// 	right: 0
+// 	margin-left: auto
+// 	margin-right: auto
+// 	top: 40px
 
-	ul 
-		display: flex
-		list-style: none
+// 	ul 
+// 		@extend .flex
+// 		list-style: none
 
-		li
-			flex: 1
+// 		li
+// 			@include flex(1)
 
 .container
 	margin: 0 auto
 	max-width: 800px
 	position: relative
 
-.flex
-	display: flex
-	align-items: baseline
-	justify-content: space-between
-
 a
-	color: $text 
-	border-bottom: 1px solid fade_out($text, .75)
+	border-bottom: .2rem solid fade_out($text, .85)
+	color: fade_out(#FFF,.45)
 
 header
-	padding: 20% 0 0
+	@extend .container
+	padding: 18% 0 0
 
 	h1
+		cursor: help
 		font-size: 1.1rem
-		width: 50%
+		width: 100%
 		//@include scale(2)
 
 		.box 
@@ -120,25 +163,25 @@ section
 	min-height: 40%
 	overflow: hidden
 	position: relative
-	padding: 12% 0
+	//padding: 12% 0
+
+	// &:not(#about):not(#contact)
+	// 	> *
+	// 		@extend .fadein
+	// 		opacity: .25
+
+	// 	&:hover
+	// 		> *
+	// 			opacity: 1
 
 	&:not(#about)
-
-		> *
-			@extend .fadein
-			opacity: .25
-
-		&:hover
-			> *
-				opacity: 1
-
-
+		min-height: 100%
 
 	h2
-		color: #FFF
+		color: fade_out(#FFF,.75)
 		font-size: 3rem
 		font-weight: 100
-		margin-bottom: 20px
+		margin-bottom: 5%
 
 	p 
 		color: $text
@@ -152,12 +195,12 @@ section
 			font-weight: 100
 			line-height: 4rem
 
-		&.divider
-			text-align: center
+		// &.divider
+		// 	text-align: center
 
-			i 
-				color: lighten($bg, 2)
-				font-size: 10rem
+		// 	i 
+		// 		color: lighten($bg, 2)
+		// 		font-size: 10rem
 
 	a
 		&:hover, &.active
@@ -179,6 +222,7 @@ section
 		cursor: pointer
 		display: block
 		font-size: 1.4rem
+		height: 40px
 		margin: 2rem auto
 		padding: 0 2%
 
@@ -192,14 +236,12 @@ section
 			font-size: .9rem
 			font-weight: 700
 			letter-spacing: .1rem
-			padding-right: 6px
+			padding-right: 8px
 			text-transform: uppercase
-			vertical-align: .4rem
+			vertical-align: .15rem
 
-		i 
-			font-size: 3rem
-
-
+		i
+			font-size: 1.25rem
 
 	&[id="about"]
 		padding: 0 0 10%
@@ -234,14 +276,14 @@ section
 
 				.more
 					float: left
-					margin: 3.2rem 0 0
+					margin: 2rem 0 0
 					width: auto
 
 			.details
 				clear: both
 				display: none
 				font-size: 1.2rem
-				height: 170px
+				height: 190px
 				width: 100%
 
 				.left 
@@ -268,14 +310,10 @@ section
 					// 	i 
 					// 		font-size: 6rem
 
-		> .social // change position to fixed to hide behind following section
-			@extend .fadein
-			//background: shade($bg, 38)
+		.social
 			background: shade($bg, 30)
 			border-radius: 2px
 			color: $bg
-			height: 50px
-			text-align: center
 			width: 78%
 
 			position: absolute
@@ -286,22 +324,15 @@ section
 			margin-right: auto
 
 			&:hover
-				//background: shade($bg, 8)
-				height: 80px
+				height: 70px
 
 				a // general hover state
 					color: $text
-					padding: 25px 0 40px
+					padding: 30px 0
 
 			ul
-				display: flex
-				list-style: none
-				margin: 0 auto
-				max-width: 800px
-
 				li
-					flex: 1
-					position: relative
+					position: relative // ensure :after stays within parent
 
 					a // regular state
 						@extend .fadein
@@ -309,12 +340,13 @@ section
 						color: fade_out($primary, .5)
 						display: block
 						height: 100%
-						padding: 10px 0
+						padding: 15px 0
 							
 						&:hover // actual hover
-							background: $yellow
+							//background: $yellow
+							+background-image(linear-gradient(shade($yellow, 20), shade($yellow, 5)))
 							color: #FFF
-							padding: 20px 0 30px
+							padding: 20px 0 50px
 
 							&:after
 								color: fade_out(#FFF, .5)
@@ -323,186 +355,262 @@ section
 								position: absolute
 								left: 0
 								right: 0
-								bottom: 35px
 								margin-left: auto
 								margin-right: auto
+								padding: 5px 0 0
 
-						i 
-							font-size: 3rem
-							display: block
 
 	&[id="capabilities"]
-		//background: shade($bg, 5)
-		//background: shade($yellow, 20)
-		//+background-image(linear-gradient(left top, shade($yellow, 40) 0%, shade($yellow, 50) 100%))
+		@extend .flex
+		@include align-content(center)
+		@include align-items(center)
 		+background-image(linear-gradient(left top, $primary, $bg))
-		color: tint($primary, 30)
+		color: fade_out(#FFF, .45)
 
 		.container
-			//max-width: 60%
-			//max-width: 78%
+			@extend .flex
+			@include flex-flow(row wrap)
 
-			.flex
-				div
-					flex: 1
-					font-size: 1.3rem
-					line-height: 2.8rem
-					
-					&:nth-of-type(2)
-						//padding-left: 5% // equal out perceived spacing between divs
+			> *
+				@include flex(1 100%)
 
-					strong
-						color: tint($primary, 30)
+			div
+				@include flex(1 auto)
+				font-size: 1.3rem
+				line-height: 2.8rem
+				
+				&:nth-of-type(2)
+					//padding-left: 5% // equal out perceived spacing between divs
 
-					ul
-						list-style-position: inside
+				ul
+					list-style: none
 
-						li
-							&:after
-								color: tint($primary, 10)
-								content: attr(data-tools)
+					li
+						@include translate3d(0,0,0)
+						font-size: 1.45rem
+						line-height: 3.5rem
 
-							a
-								@extend .fadein
-								&:hover
-									color: $yellow
+						&:before
+							border-radius: 2px
+							box-shadow: inset 0 0 0 3px fade_out($text, .75)
+							content: " \0a "
+							display: inline-block
+							margin-right: 10px
+							width: .8rem
+							height: .8rem
+							vertical-align: 4%
 
-							ul
-								color: tint($primary, 10)
-								line-height: 2.25rem
+						&:after
+							color: tint($primary, 15)
+							content: attr(data-tools)
 
-								li
-									margin-left: 16px
+						a
+							@extend .fadein
+							&:hover
+								color: $yellow
 
-		// .container
-		// 	background: red
-		// 	border-radius: 50%
-		// 	box-shadow: 0 0 60px 40px red
-		// 	text-align: center
-		// 	height: 500px
-		// 	width: 500px
+						ul
+							color: tint($primary, 15)
+							line-height: 2.25rem
 
-	&[id="design"]
-		//display: none
-		+background-image(linear-gradient(left top, shade($yellow, 10), shade($yellow, 30)))
+							li
+								margin-left: 16px
+								margin-top: -1rem
 
-		h2 
-			max-width: 800px
-			margin: 0 auto 40px
+								&:before 
+									box-shadow: inset 0 0 0 3px fade_out($text, .9)
 
-			.view
-				@extend .fadein
-				border: 2px solid $yellow
-				border-radius: 2px
-				color: #FFF
-				font-size: .9rem
-				font-weight: 900
-				margin-left: 20px
-				padding: 4px 10px
-				text-transform: uppercase
-				vertical-align: 5px
+	&[id="contact"]
+		+background-image(linear-gradient(left top, $primary, $bg))
+		@extend .flex
 
-				i
-					font-size: 2.5rem
-					margin-left: 5px
-					vertical-align: -3px
+		p 
+			//@extend .container
+			color: tint($yellow, 10)
+			@include flex(1)
+			@include align-self(center)
+			font-size: 3rem
+			font-weight: 100
+			line-height: 4rem
+			text-align: center
 
 			a 
 				@extend .fadein
 				border-bottom: none
+				//color: shade($yellow, 10)
 				color: #FFF
+				display: inline-block
+				font-weight: 700
+
+				// do not remove
+
+				// &:after
+				// 	@extend .fadein
+				// 	@include scaleX(0)
+				// 	border-bottom: 2px solid shade($yellow, 10)
+				// 	content: ""
+				// 	opacity: 0
+				// 	width: 40%
+
+				// 	position: absolute
+				// 	bottom: -2px
+				// 	right: 28.5%
+					
+				// &:hover
+
+				// 	&:after
+				// 		@include scaleX(1)
+				// 		opacity: 1
+
+				&:after
+					@extend .fadein
+					@include scaleX(0)
+					border-bottom: 2px solid tint($yellow, 10)
+					clear: both
+					content: ""
+					display: block
+					width: 100%
 
 				&:hover
-					border-bottom-color: $yellow
+					&:after
+						@include scaleX(1)
+						
 
-					.view
-						border-color: #FFF
-						//color: #FFF
-						margin-left: 40px
+	// &[id="design"]
+	// 	//display: none
+	// 	+background-image(linear-gradient(left top, shade($yellow, 10), shade($yellow, 30)))
 
-		[id="dribbble"], [id="codepen"]
-			margin: 0 auto 40px
-			max-width: 68%
+	// 	h2 
+	// 		max-width: 800px
+	// 		margin: 0 auto 40px
 
-		[id="dribbble"]
+	// 		.view
+	// 			@extend .fadein
+	// 			border: 2px solid $yellow
+	// 			border-radius: 2px
+	// 			color: #FFF
+	// 			font-size: .9rem
+	// 			font-weight: 900
+	// 			margin-left: 20px
+	// 			padding: 4px 10px
+	// 			text-transform: uppercase
+	// 			vertical-align: 5px
 
-			&::after
-				border-bottom: 2px solid $yellow
-				content: ""
-				display: block
-				padding-top: 6%
+	// 			i
+	// 				font-size: 2.5rem
+	// 				margin-left: 5px
+	// 				vertical-align: -3px
 
-			ul
-				display: flex
-				flex-wrap: wrap
-				justify-content: space-around
-				list-style: none
+	// 		a 
+	// 			@extend .fadein
+	// 			border-bottom: none
+	// 			color: #FFF
 
-				li 
-					flex: 0 1 calc(25% - 3px)
-					margin-bottom: 3px
+	// 			&:hover
+	// 				border-bottom-color: $yellow
 
-					&:not(:nth-child(4n + 4))
-						margin-right: 3px
+	// 				.view
+	// 					border-color: #FFF
+	// 					//color: #FFF
+	// 					margin-left: 40px
 
-					a
-						border-bottom: none
-						border-radius: 2
-						display: block
-						height: 165px
+	// 	[id="dribbble"], [id="codepen"]
+	// 		margin: 0 auto 40px
+	// 		max-width: 68%
 
-						&:hover
-							img
-								@include scale(1.05)
-								opacity: 1
-								z-index: 2
+	// 	[id="dribbble"]
 
-						img
-							@extend .fadein
-							border-radius: 2px
-							opacity: .5
-							width: 100%
-							position: relative
+	// 		&::after
+	// 			border-bottom: 2px solid $yellow
+	// 			content: ""
+	// 			display: block
+	// 			padding-top: 6%
 
-		[id="codepen"]
+	// 		ul
+	// 			display: flex
+	// 			flex-wrap: wrap
+	// 			justify-content: space-around
+	// 			list-style: none
+
+	// 			li 
+	// 				flex: 0 1 calc(25% - 3px)
+	// 				margin-bottom: 3px
+
+	// 				&:not(:nth-child(4n + 4))
+	// 					margin-right: 3px
+
+	// 				a
+	// 					border-bottom: none
+	// 					border-radius: 2
+	// 					display: block
+	// 					height: 165px
+
+	// 					&:hover
+	// 						img
+	// 							@include scale(1.05)
+	// 							opacity: 1
+	// 							z-index: 2
+
+	// 					img
+	// 						@extend .fadein
+	// 						border-radius: 2px
+	// 						opacity: .5
+	// 						width: 100%
+	// 						position: relative
+
+	// 	[id="codepen"]
 
 footer
-	.social
-		ul
-			display: flex
+	background: shade($yellow, 20)
+	padding: 1% 0
+
+	p 
+		@extend .container
+
+		&.copyright
+			color: tint($yellow, 10)
+			font-size: 1rem
+			text-align: right
+
+.oops
+	@extend .container
+	display: none
+	padding: 8% 0 0
+	
+	h2
+		color: $yellow
+
+	p 
+		font-size: 1.8rem
+		line-height: 2.8rem
+		margin: 20px 0
+
+		&.callout
+			font-size: 2.2rem
+			font-weight: 100
+			line-height: 3.2rem
+
+		code 
+			background: $bg
+			border-radius: 2px
+			color: $yellow
+			padding: 4px 6px
+
+	a
+		@extend .fadein
+		&:hover
+			color: $yellow
+
+	ul
+		@extend .flex
+		margin: 40px auto
+		width: 100%
+
+		li
+			flex: 1
 			list-style: none
-			margin: 0 auto
-			max-width: 800px
 
-			li
-				flex: 1
-				position: relative
-
-				a // regular state
-					@extend .fadein
-					border-bottom: none
-					color: fade_out($primary, .5)
-					display: block
-					height: 100%
-					text-align: center
-					padding: 10px 0
-						
-					&:hover // actual hover
-						background: $yellow
-						color: #FFF
-						padding: 20px 0 30px
-
-						&:after
-							color: fade_out(#FFF, .5)
-							content: attr(data-site)
-							font-size: 1rem
-							position: absolute
-							left: 0
-							right: 0
-							bottom: 35px
-							margin-left: auto
-							margin-right: auto
-
-					i 
-						font-size: 3rem
-						display: block
+			a 
+				border-bottom: none
+				font-size: 2.4rem
+				padding: 20px

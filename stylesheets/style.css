@@ -1,5 +1,5 @@
 /* line 12, ../sass/partials/_animations.scss */
-.fadein, nav, header h1 .box, header h1 .tagline, section:not(#about) > *, section .more, section .more .text, section[id="about"] .container [id="bio"]:hover, section[id="about"] .container [id="bio"] .callout, section[id="about"] > .social, section[id="about"] > .social ul li a, section[id="capabilities"] .container .flex div ul li a, section[id="design"] h2 .view, section[id="design"] h2 a, section[id="design"] [id="dribbble"] ul li a img, footer .social ul li a {
+.fadein, .social, header h1 .box, header h1 .tagline, section .more, section .more .text, section[id="about"] .container [id="bio"]:hover, section[id="about"] header [id="bio"]:hover, section[id="about"] footer p [id="bio"]:hover, footer section[id="about"] p [id="bio"]:hover, section[id="about"] .oops [id="bio"]:hover, section[id="about"] .container [id="bio"] .callout, section[id="about"] header [id="bio"] .callout, section[id="about"] footer p [id="bio"] .callout, footer section[id="about"] p [id="bio"] .callout, section[id="about"] .oops [id="bio"] .callout, section[id="about"] .social ul li a, section[id="capabilities"] .container div ul li a, section[id="capabilities"] header div ul li a, section[id="capabilities"] footer p div ul li a, footer section[id="capabilities"] p div ul li a, section[id="capabilities"] .oops div ul li a, section[id="contact"] p a, section[id="contact"] p a:after, .oops a {
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -660,7 +660,7 @@ body {
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, img, input, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
@@ -735,40 +735,271 @@ a {
 }
 
 @font-face {
-  font-family: "Entypo";
-  src: url("../fonts/entypo/entypo.eot");
-  src: url("../fonts/entypo/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo/entypo.woff") format("woff"), url("../fonts/entypo/entypo.ttf") format("truetype"), url("../fonts/entypo/entypo.svg#entypo") format("svg");
+  font-family: "Fontello";
+  src: url("../fonts/fontello/fontello.eot");
+  src: url("../fonts/fontello/fontello.eot?#iefix") format("embedded-opentype"), url("../fonts/fontello/fontello.woff") format("woff"), url("../fonts/fontello/fontello.ttf") format("truetype"), url("../fonts/fontello/fontello.svg#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Entypo-S";
-  src: url("../fonts/entypo/entypo-social.eot");
-  src: url("../fonts/entypo/entypo-social.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo/entypo-social.woff") format("woff"), url("../fonts/entypo/entypo-social.ttf") format("truetype"), url("../fonts/entypo/entypo-social.svg#entypo-social") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* line 28, ../sass/partials/_fonts.scss */
+/* line 16, ../sass/partials/_fonts.scss */
 i {
-  font-family: "Entypo";
+  font-family: "Fontello";
   font-style: normal;
+  font-variant: normal;
+  text-transform: none;
 }
-/* line 32, ../sass/partials/_fonts.scss */
-i.social {
-  font-family: "Entypo-S";
-}
-
-@font-face {
-  font-family: "Nevis";
-  src: url("../fonts/nevis/nevis-webfont.eot");
-  src: url("../fonts/nevis/nevis.eot?#iefix") format("embedded-opentype"), url("../fonts/nevis/nevis-webfont.woff") format("woff"), url("../fonts/nevis/nevis-webfont.ttf") format("truetype"), url("../fonts/nevis/nevis-webfont.svg#nevis-webfont") format("svg");
+/* line 22, ../sass/partials/_fonts.scss */
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+  font-family: "Fontello";
+  font-style: normal;
   font-weight: normal;
-  font-style: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
 }
 
-/* line 13, ../sass/style.sass */
+/* line 34, ../sass/partials/_fonts.scss */
+.icon-codepen:before {
+  content: '\e800';
+}
+
+/* line 35, ../sass/partials/_fonts.scss */
+.icon-soundcloud:before {
+  content: '\e807';
+}
+
+/* line 36, ../sass/partials/_fonts.scss */
+.icon-close:before {
+  content: '\e809';
+}
+
+/* line 37, ../sass/partials/_fonts.scss */
+.icon-down:before {
+  content: '\e808';
+}
+
+/* line 38, ../sass/partials/_fonts.scss */
+.icon-github:before {
+  content: '\e806';
+}
+
+/* line 39, ../sass/partials/_fonts.scss */
+.icon-kippt:before {
+  content: '\e80a';
+}
+
+/* line 40, ../sass/partials/_fonts.scss */
+.icon-linkedin:before {
+  content: '\e803';
+}
+
+/* line 41, ../sass/partials/_fonts.scss */
+.icon-dribbble:before {
+  content: '\e804';
+}
+
+/* line 42, ../sass/partials/_fonts.scss */
+.icon-lastfm:before {
+  content: '\e805';
+}
+
+/* line 43, ../sass/partials/_fonts.scss */
+.icon-rdio:before {
+  content: '\e801';
+}
+
+/* line 44, ../sass/partials/_fonts.scss */
+.icon-gplus:before {
+  content: '\e802';
+}
+
+@media all and (max-width: 860px) {
+  /* line 10, ../sass/breakpoints.sass */
+  .container, header, footer p, .oops {
+    padding: 0 10% !important;
+  }
+
+  /* line 13, ../sass/breakpoints.sass */
+  header {
+    padding-top: 10% !important;
+  }
+
+  /* line 20, ../sass/breakpoints.sass */
+  section[id="about"] .callout {
+    padding: 0 10px 0 0 !important;
+    width: 100% !important;
+  }
+  /* line 24, ../sass/breakpoints.sass */
+  section[id="about"] button.more {
+    clear: both !important;
+    float: right !important;
+    width: 25% !important;
+  }
+  /* line 29, ../sass/breakpoints.sass */
+  section[id="capabilities"] {
+    min-height: 60% !important;
+  }
+  /* line 34, ../sass/breakpoints.sass */
+  section[id="capabilities"] ul > li {
+    font-size: 1.2rem !important;
+    line-height: 2.2rem !important;
+  }
+  /* line 38, ../sass/breakpoints.sass */
+  section[id="capabilities"] ul > li ul {
+    margin-top: 5px !important;
+  }
+  /* line 41, ../sass/breakpoints.sass */
+  section[id="capabilities"] ul > li ul li {
+    line-height: 2.8rem !important;
+  }
+  /* line 44, ../sass/breakpoints.sass */
+  section[id="contact"] {
+    min-height: 60% !important;
+  }
+  /* line 47, ../sass/breakpoints.sass */
+  section[id="contact"] p {
+    font-size: 2.2rem !important;
+    line-height: 3.2rem !important;
+  }
+}
+@media all and (max-width: 600px) {
+  /* line 55, ../sass/breakpoints.sass */
+  section[id="about"] {
+    min-height: 20% !important;
+  }
+  /* line 58, ../sass/breakpoints.sass */
+  section[id="about"] a[id="bio"] {
+    pointer-events: none !important;
+  }
+  /* line 61, ../sass/breakpoints.sass */
+  section[id="about"] a[id="bio"] .callout {
+    font-size: 2.2rem !important;
+    line-height: 3.2rem !important;
+  }
+  /* line 65, ../sass/breakpoints.sass */
+  section[id="about"] a[id="bio"] button.more {
+    display: none !important;
+  }
+  /* line 68, ../sass/breakpoints.sass */
+  section[id="capabilities"] {
+    min-height: 50% !important;
+  }
+  /* line 74, ../sass/breakpoints.sass */
+  section[id="capabilities"] .container h2, section[id="capabilities"] header h2, section[id="capabilities"] footer p h2, footer section[id="capabilities"] p h2, section[id="capabilities"] .oops h2 {
+    font-size: 2.2rem !important;
+  }
+  /* line 78, ../sass/breakpoints.sass */
+  section[id="capabilities"] .container ul li, section[id="capabilities"] header ul li, section[id="capabilities"] footer p ul li, footer section[id="capabilities"] p ul li, section[id="capabilities"] .oops ul li {
+    font-size: 1.2rem !important;
+    line-height: 2.2rem !important;
+  }
+  /* line 83, ../sass/breakpoints.sass */
+  section[id="capabilities"] .container ul li ul li, section[id="capabilities"] header ul li ul li, section[id="capabilities"] footer p ul li ul li, footer section[id="capabilities"] p ul li ul li, section[id="capabilities"] .oops ul li ul li {
+    line-height: 2.8rem !important;
+  }
+  /* line 86, ../sass/breakpoints.sass */
+  section[id="capabilities"] .container .what, section[id="capabilities"] header .what, section[id="capabilities"] footer p .what, footer section[id="capabilities"] p .what, section[id="capabilities"] .oops .what {
+    margin-bottom: 5% !important;
+  }
+  /* line 89, ../sass/breakpoints.sass */
+  section[id="contact"] {
+    min-height: 40% !important;
+  }
+  /* line 92, ../sass/breakpoints.sass */
+  section[id="contact"] p {
+    font-size: 1.8rem !important;
+    line-height: 2.8rem !important;
+  }
+}
+@media all and (max-width: 530px) {
+  /* line 102, ../sass/breakpoints.sass */
+  section[id="capabilities"] {
+    padding: 4% 10% !important;
+    min-width: 30% !important;
+  }
+  /* line 106, ../sass/breakpoints.sass */
+  section[id="capabilities"] .container, section[id="capabilities"] header, section[id="capabilities"] footer p, footer section[id="capabilities"] p, section[id="capabilities"] .oops {
+    margin: 0 auto !important;
+  }
+  /* line 111, ../sass/breakpoints.sass */
+  section[id="contact"] p {
+    font-size: 1.6rem !important;
+    line-height: 2.6rem !important;
+  }
+}
+@media all and (max-width: 460px) {
+  /* line 120, ../sass/breakpoints.sass */
+  section[id="about"] a[id="bio"] .callout {
+    font-size: 1.8rem !important;
+    line-height: 2.8rem !important;
+  }
+  /* line 125, ../sass/breakpoints.sass */
+  section[id="contact"] p {
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+    line-height: 2rem !important;
+  }
+}
+@media all and (max-width: 400px) {
+  /* line 133, ../sass/breakpoints.sass */
+  section[id="contact"] {
+    min-height: 30% !important;
+  }
+  /* line 135, ../sass/breakpoints.sass */
+  section[id="contact"] p {
+    font-size: 1.2rem !important;
+  }
+}
+@media all and (max-width: 360px) {
+  /* line 141, ../sass/breakpoints.sass */
+  section[id="capabilities"] {
+    min-height: 40% !important;
+  }
+  /* line 144, ../sass/breakpoints.sass */
+  section[id="capabilities"] p {
+    font-size: 1.5rem !important;
+    line-height: 2.3rem !important;
+  }
+  /* line 149, ../sass/breakpoints.sass */
+  section[id="capabilities"] ul li:after {
+    content: "" !important;
+  }
+  /* line 153, ../sass/breakpoints.sass */
+  section[id="contact"] p {
+    font-size: 1.1rem !important;
+    line-height: 2rem !important;
+  }
+}
+@media all and (max-width: 320px) {
+  /* line 162, ../sass/breakpoints.sass */
+  section[id="about"] a[id="bio"] .callout {
+    font-size: 1.6rem !important;
+    font-weight: 500 !important;
+    line-height: 2.2rem !important;
+    padding-top: 10px !important;
+  }
+  /* line 168, ../sass/breakpoints.sass */
+  section[id="capabilities"] {
+    padding: 8% !important;
+  }
+  /* line 172, ../sass/breakpoints.sass */
+  section[id="capabilities"] .container h2, section[id="capabilities"] header h2, section[id="capabilities"] footer p h2, footer section[id="capabilities"] p h2, section[id="capabilities"] .oops h2 {
+    font-size: 1.6rem !important;
+    font-weight: 500 !important;
+  }
+  /* line 176, ../sass/breakpoints.sass */
+  section[id="contact"] {
+    min-height: 20% !important;
+  }
+  /* line 179, ../sass/breakpoints.sass */
+  section[id="contact"] p {
+    font-size: 1rem !important;
+    line-height: 1.8rem !important;
+  }
+}
+/* line 14, ../sass/style.sass */
 header {
   -webkit-animation: fadeIn 4s 0s ease both;
   -moz-animation: fadeIn 4s 0s ease both;
@@ -777,7 +1008,7 @@ header {
   animation: fadeIn 4s 0s ease both;
 }
 
-/* line 18, ../sass/style.sass */
+/* line 19, ../sass/style.sass */
 section[id="about"] {
   -webkit-animation: fadeIn 2s 2s ease both;
   -moz-animation: fadeIn 2s 2s ease both;
@@ -785,15 +1016,15 @@ section[id="about"] {
   -o-animation: fadeIn 2s 2s ease both;
   animation: fadeIn 2s 2s ease both;
 }
-/* line 21, ../sass/style.sass */
-section:not([id="about"]) {
+/* line 22, ../sass/style.sass */
+section:not([id="about"]):not(.oops) {
   -webkit-animation: fadeInUp 2s 2.6s ease both;
   -moz-animation: fadeInUp 2s 2.6s ease both;
   -ms-animation: fadeInUp 2s 2.6s ease both;
   -o-animation: fadeInUp 2s 2.6s ease both;
   animation: fadeInUp 2s 2.6s ease both;
 }
-/* line 24, ../sass/style.sass */
+/* line 25, ../sass/style.sass */
 section[id="about"] > .social {
   -webkit-animation: fadeInUp 2s 3.8s ease both;
   -moz-animation: fadeInUp 2s 3.8s ease both;
@@ -802,82 +1033,118 @@ section[id="about"] > .social {
   animation: fadeInUp 2s 3.8s ease both;
 }
 
-/* line 27, ../sass/style.sass */
+/* line 30, ../sass/style.sass */
+.flex, .social ul, section[id="capabilities"], section[id="capabilities"] .container, section[id="capabilities"] header, section[id="capabilities"] footer p, footer section[id="capabilities"] p, section[id="capabilities"] .oops, section[id="contact"], .oops ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-box-align: baseline;
+  -moz-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@supports not (flex-wrap: wrap) {
+  /* line 40, ../sass/style.sass */
+  body > *:not(.oops) {
+    display: none;
+  }
+  /* line 42, ../sass/style.sass */
+  body .oops {
+    display: block;
+  }
+}
+
+/* line 45, ../sass/style.sass */
+.social {
+  border-radius: 2px;
+  height: 50px;
+  text-align: center;
+}
+/* line 52, ../sass/style.sass */
+.social ul {
+  -ms-flex-line-pack: start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  height: 100%;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 800px;
+}
+/* line 60, ../sass/style.sass */
+.social ul li {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  height: 100%;
+}
+/* line 64, ../sass/style.sass */
+.social ul li a {
+  height: 100%;
+}
+/* line 67, ../sass/style.sass */
+.social ul li a i {
+  font-size: 1.75rem;
+  display: block;
+}
+
+/* line 73, ../sass/style.sass */
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 
-/* line 30, ../sass/style.sass */
+/* line 77, ../sass/style.sass */
 html, body {
   font-family: "Open Sans", Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
-/* line 36, ../sass/style.sass */
+/* line 81, ../sass/style.sass */
 body {
   background: #141a20 url(/img/bg2.jpg) center 40%;
   background-attachment: scroll;
   background-repeat: no-repeat;
   color: #525b60;
+  overflow: scroll;
 }
 
-/* line 42, ../sass/style.sass */
-nav {
-  border: 2px solid #192129;
-  border-radius: 2px;
-  color: #192129;
-  height: 50px;
-  text-align: center;
-  width: 78%;
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 40px;
-}
-/* line 59, ../sass/style.sass */
-nav ul {
-  display: flex;
-  list-style: none;
-}
-/* line 63, ../sass/style.sass */
-nav ul li {
-  flex: 1;
-}
-
-/* line 66, ../sass/style.sass */
-.container {
+/* line 112, ../sass/style.sass */
+.container, header, footer p, .oops {
   margin: 0 auto;
   max-width: 800px;
   position: relative;
 }
 
-/* line 71, ../sass/style.sass */
-.flex {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
-/* line 76, ../sass/style.sass */
+/* line 117, ../sass/style.sass */
 a {
-  color: #525b60;
-  border-bottom: 1px solid rgba(82, 91, 96, 0.25);
+  border-bottom: 0.2rem solid rgba(82, 91, 96, 0.15);
+  color: rgba(255, 255, 255, 0.55);
 }
 
-/* line 80, ../sass/style.sass */
+/* line 121, ../sass/style.sass */
 header {
-  padding: 20% 0 0;
+  padding: 18% 0 0;
 }
-/* line 83, ../sass/style.sass */
+/* line 125, ../sass/style.sass */
 header h1 {
+  cursor: help;
   font-size: 1.1rem;
-  width: 50%;
+  width: 100%;
 }
-/* line 88, ../sass/style.sass */
+/* line 131, ../sass/style.sass */
 header h1 .box {
   border: 2px solid #2a3847;
   border-radius: 2px;
@@ -889,12 +1156,12 @@ header h1 .box {
   height: 30px;
   width: 30px;
 }
-/* line 100, ../sass/style.sass */
+/* line 143, ../sass/style.sass */
 header h1 .box sup {
   font-size: 1rem;
   vertical-align: 3px;
 }
-/* line 104, ../sass/style.sass */
+/* line 147, ../sass/style.sass */
 header h1 .tagline {
   color: rgba(42, 56, 71, 0.75);
   display: none;
@@ -903,69 +1170,55 @@ header h1 .tagline {
   padding-left: 3px;
   vertical-align: 0;
 }
-/* line 114, ../sass/style.sass */
+/* line 157, ../sass/style.sass */
 header h1:hover .box {
   border-color: #98855d;
 }
-/* line 116, ../sass/style.sass */
+/* line 159, ../sass/style.sass */
 header h1:hover .tagline {
   color: #98855d;
 }
 
-/* line 119, ../sass/style.sass */
+/* line 162, ../sass/style.sass */
 section {
   min-height: 40%;
   overflow: hidden;
   position: relative;
-  padding: 12% 0;
 }
-/* line 127, ../sass/style.sass */
-section:not(#about) > * {
-  opacity: 0.25;
+/* line 177, ../sass/style.sass */
+section:not(#about) {
+  min-height: 100%;
 }
-/* line 132, ../sass/style.sass */
-section:not(#about):hover > * {
-  opacity: 1;
-}
-/* line 137, ../sass/style.sass */
+/* line 180, ../sass/style.sass */
 section h2 {
-  color: white;
+  color: rgba(255, 255, 255, 0.25);
   font-size: 3rem;
   font-weight: 100;
-  margin-bottom: 20px;
+  margin-bottom: 5%;
 }
-/* line 143, ../sass/style.sass */
+/* line 186, ../sass/style.sass */
 section p {
   color: #525b60;
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
-/* line 148, ../sass/style.sass */
+/* line 191, ../sass/style.sass */
 section p.callout {
   color: #796a4a;
   font-size: 2.8rem;
   font-weight: 100;
   line-height: 4rem;
 }
-/* line 155, ../sass/style.sass */
-section p.divider {
-  text-align: center;
-}
-/* line 158, ../sass/style.sass */
-section p.divider i {
-  color: #1d2630;
-  font-size: 10rem;
-}
-/* line 164, ../sass/style.sass */
+/* line 207, ../sass/style.sass */
 section a:hover .more, section a.active .more {
   border-color: #98855d;
   padding: 0 18px 0 24px;
 }
-/* line 168, ../sass/style.sass */
+/* line 211, ../sass/style.sass */
 section a:hover .more .text, section a.active .more .text {
   display: inline;
 }
-/* line 171, ../sass/style.sass */
+/* line 214, ../sass/style.sass */
 section .more {
   -webkit-transform: translateZ(0px);
   -moz-transform: translateZ(0px);
@@ -982,90 +1235,89 @@ section .more {
   cursor: pointer;
   display: block;
   font-size: 1.4rem;
+  height: 40px;
   margin: 2rem auto;
   padding: 0 2%;
 }
-/* line 185, ../sass/style.sass */
+/* line 229, ../sass/style.sass */
 section .more:focus {
   outline: 0;
 }
-/* line 188, ../sass/style.sass */
+/* line 232, ../sass/style.sass */
 section .more .text {
   display: none;
   color: white;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
-  padding-right: 6px;
+  padding-right: 8px;
   text-transform: uppercase;
-  vertical-align: 0.4rem;
+  vertical-align: 0.15rem;
 }
-/* line 199, ../sass/style.sass */
+/* line 243, ../sass/style.sass */
 section .more i {
-  font-size: 3rem;
+  font-size: 1.25rem;
 }
-/* line 204, ../sass/style.sass */
+/* line 246, ../sass/style.sass */
 section[id="about"] {
   padding: 0 0 10%;
 }
-/* line 207, ../sass/style.sass */
-section[id="about"] .container {
+/* line 249, ../sass/style.sass */
+section[id="about"] .container, section[id="about"] header, section[id="about"] footer p, footer section[id="about"] p, section[id="about"] .oops {
   display: block;
 }
-/* line 210, ../sass/style.sass */
-section[id="about"] .container [id="bio"] {
+/* line 252, ../sass/style.sass */
+section[id="about"] .container [id="bio"], section[id="about"] header [id="bio"], section[id="about"] footer p [id="bio"], footer section[id="about"] p [id="bio"], section[id="about"] .oops [id="bio"] {
   border-bottom: none;
   display: block;
   overflow: hidden;
   padding: 1% 0;
 }
-/* line 219, ../sass/style.sass */
-section[id="about"] .container [id="bio"]:hover .callout {
+/* line 261, ../sass/style.sass */
+section[id="about"] .container [id="bio"]:hover .callout, section[id="about"] header [id="bio"]:hover .callout, section[id="about"] footer p [id="bio"]:hover .callout, footer section[id="about"] p [id="bio"]:hover .callout, section[id="about"] .oops [id="bio"]:hover .callout {
   color: #2a3847;
 }
-/* line 222, ../sass/style.sass */
-section[id="about"] .container [id="bio"] .callout {
+/* line 264, ../sass/style.sass */
+section[id="about"] .container [id="bio"] .callout, section[id="about"] header [id="bio"] .callout, section[id="about"] footer p [id="bio"] .callout, footer section[id="about"] p [id="bio"] .callout, section[id="about"] .oops [id="bio"] .callout {
   float: left;
   padding: 0 10% 0 0;
   width: 85%;
 }
-/* line 228, ../sass/style.sass */
-section[id="about"] .container [id="bio"] .callout.active {
+/* line 270, ../sass/style.sass */
+section[id="about"] .container [id="bio"] .callout.active, section[id="about"] header [id="bio"] .callout.active, section[id="about"] footer p [id="bio"] .callout.active, footer section[id="about"] p [id="bio"] .callout.active, section[id="about"] .oops [id="bio"] .callout.active {
   color: rgba(152, 133, 93, 0.5);
 }
-/* line 232, ../sass/style.sass */
-section[id="about"] .container [id="bio"] .callout.active:hover {
+/* line 274, ../sass/style.sass */
+section[id="about"] .container [id="bio"] .callout.active:hover, section[id="about"] header [id="bio"] .callout.active:hover, section[id="about"] footer p [id="bio"] .callout.active:hover, footer section[id="about"] p [id="bio"] .callout.active:hover, section[id="about"] .oops [id="bio"] .callout.active:hover {
   color: rgba(42, 56, 71, 0.5);
 }
-/* line 235, ../sass/style.sass */
-section[id="about"] .container [id="bio"] .more {
+/* line 277, ../sass/style.sass */
+section[id="about"] .container [id="bio"] .more, section[id="about"] header [id="bio"] .more, section[id="about"] footer p [id="bio"] .more, footer section[id="about"] p [id="bio"] .more, section[id="about"] .oops [id="bio"] .more {
   float: left;
-  margin: 3.2rem 0 0;
+  margin: 2rem 0 0;
   width: auto;
 }
-/* line 240, ../sass/style.sass */
-section[id="about"] .container .details {
+/* line 282, ../sass/style.sass */
+section[id="about"] .container .details, section[id="about"] header .details, section[id="about"] footer p .details, footer section[id="about"] p .details, section[id="about"] .oops .details {
   clear: both;
   display: none;
   font-size: 1.2rem;
-  height: 170px;
+  height: 190px;
   width: 100%;
 }
-/* line 247, ../sass/style.sass */
-section[id="about"] .container .details .left {
+/* line 289, ../sass/style.sass */
+section[id="about"] .container .details .left, section[id="about"] header .details .left, section[id="about"] footer p .details .left, footer section[id="about"] p .details .left, section[id="about"] .oops .details .left {
   width: 85%;
 }
-/* line 250, ../sass/style.sass */
-section[id="about"] .container .details p, section[id="about"] .container .details span {
+/* line 292, ../sass/style.sass */
+section[id="about"] .container .details p, section[id="about"] header .details p, section[id="about"] footer p .details p, footer section[id="about"] p .details p, section[id="about"] .oops .details p, section[id="about"] .container .details span, section[id="about"] header .details span, section[id="about"] footer p .details span, footer section[id="about"] p .details span, section[id="about"] .oops .details span {
   margin: 16px 0;
 }
-/* line 271, ../sass/style.sass */
-section[id="about"] > .social {
+/* line 313, ../sass/style.sass */
+section[id="about"] .social {
   background: #11171c;
   border-radius: 2px;
   color: #192129;
-  height: 50px;
-  text-align: center;
   width: 78%;
   position: absolute;
   bottom: 0;
@@ -1074,238 +1326,244 @@ section[id="about"] > .social {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 288, ../sass/style.sass */
-section[id="about"] > .social:hover {
-  height: 80px;
+/* line 326, ../sass/style.sass */
+section[id="about"] .social:hover {
+  height: 70px;
 }
-/* line 292, ../sass/style.sass */
-section[id="about"] > .social:hover a {
+/* line 329, ../sass/style.sass */
+section[id="about"] .social:hover a {
   color: #525b60;
-  padding: 25px 0 40px;
+  padding: 30px 0;
 }
-/* line 296, ../sass/style.sass */
-section[id="about"] > .social ul {
-  display: flex;
-  list-style: none;
-  margin: 0 auto;
-  max-width: 800px;
-}
-/* line 302, ../sass/style.sass */
-section[id="about"] > .social ul li {
-  flex: 1;
+/* line 334, ../sass/style.sass */
+section[id="about"] .social ul li {
   position: relative;
 }
-/* line 306, ../sass/style.sass */
-section[id="about"] > .social ul li a {
+/* line 337, ../sass/style.sass */
+section[id="about"] .social ul li a {
   border-bottom: none;
   color: rgba(42, 56, 71, 0.5);
   display: block;
   height: 100%;
-  padding: 10px 0;
+  padding: 15px 0;
 }
-/* line 314, ../sass/style.sass */
-section[id="about"] > .social ul li a:hover {
-  background: #98855d;
+/* line 345, ../sass/style.sass */
+section[id="about"] .social ul li a:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #796a4a), color-stop(100%, #907e58));
+  background-image: -webkit-linear-gradient(#796a4a, #907e58);
+  background-image: -moz-linear-gradient(#796a4a, #907e58);
+  background-image: -o-linear-gradient(#796a4a, #907e58);
+  background-image: linear-gradient(#796a4a, #907e58);
   color: white;
-  padding: 20px 0 30px;
+  padding: 20px 0 50px;
 }
-/* line 319, ../sass/style.sass */
-section[id="about"] > .social ul li a:hover:after {
+/* line 351, ../sass/style.sass */
+section[id="about"] .social ul li a:hover:after {
   color: rgba(255, 255, 255, 0.5);
   content: attr(data-site);
   font-size: 1rem;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 35px;
   margin-left: auto;
   margin-right: auto;
+  padding: 5px 0 0;
 }
-/* line 330, ../sass/style.sass */
-section[id="about"] > .social ul li a i {
-  font-size: 3rem;
-  display: block;
-}
-/* line 334, ../sass/style.sass */
+/* line 363, ../sass/style.sass */
 section[id="capabilities"] {
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #2a3847), color-stop(100%, #192129));
   background-image: -webkit-linear-gradient(left top, #2a3847, #192129);
   background-image: -moz-linear-gradient(left top, #2a3847, #192129);
   background-image: -o-linear-gradient(left top, #2a3847, #192129);
   background-image: linear-gradient(left top, #2a3847, #192129);
-  color: #69737e;
+  color: rgba(255, 255, 255, 0.55);
 }
-/* line 346, ../sass/style.sass */
-section[id="capabilities"] .container .flex div {
-  flex: 1;
+/* line 370, ../sass/style.sass */
+section[id="capabilities"] .container, section[id="capabilities"] header, section[id="capabilities"] footer p, footer section[id="capabilities"] p, section[id="capabilities"] .oops {
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+/* line 374, ../sass/style.sass */
+section[id="capabilities"] .container > *, section[id="capabilities"] header > *, section[id="capabilities"] footer p > *, footer section[id="capabilities"] p > *, section[id="capabilities"] .oops > * {
+  -ms-flex: 1 100%;
+  -webkit-flex: 1 100%;
+  flex: 1 100%;
+}
+/* line 377, ../sass/style.sass */
+section[id="capabilities"] .container div, section[id="capabilities"] header div, section[id="capabilities"] footer p div, footer section[id="capabilities"] p div, section[id="capabilities"] .oops div {
+  -ms-flex: 1 auto;
+  -webkit-flex: 1 auto;
+  flex: 1 auto;
   font-size: 1.3rem;
   line-height: 2.8rem;
 }
-/* line 354, ../sass/style.sass */
-section[id="capabilities"] .container .flex div strong {
-  color: #69737e;
-}
-/* line 357, ../sass/style.sass */
-section[id="capabilities"] .container .flex div ul {
-  list-style-position: inside;
-}
-/* line 361, ../sass/style.sass */
-section[id="capabilities"] .container .flex div ul li:after {
-  color: #3f4b59;
-  content: attr(data-tools);
-}
-/* line 367, ../sass/style.sass */
-section[id="capabilities"] .container .flex div ul li a:hover {
-  color: #98855d;
-}
-/* line 370, ../sass/style.sass */
-section[id="capabilities"] .container .flex div ul li ul {
-  color: #3f4b59;
-  line-height: 2.25rem;
-}
-/* line 374, ../sass/style.sass */
-section[id="capabilities"] .container .flex div ul li ul li {
-  margin-left: 16px;
-}
 /* line 385, ../sass/style.sass */
-section[id="design"] {
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #887753), color-stop(100%, #6a5d41));
-  background-image: -webkit-linear-gradient(left top, #887753, #6a5d41);
-  background-image: -moz-linear-gradient(left top, #887753, #6a5d41);
-  background-image: -o-linear-gradient(left top, #887753, #6a5d41);
-  background-image: linear-gradient(left top, #887753, #6a5d41);
+section[id="capabilities"] .container div ul, section[id="capabilities"] header div ul, section[id="capabilities"] footer p div ul, footer section[id="capabilities"] p div ul, section[id="capabilities"] .oops div ul {
+  list-style: none;
 }
-/* line 389, ../sass/style.sass */
-section[id="design"] h2 {
-  max-width: 800px;
-  margin: 0 auto 40px;
+/* line 388, ../sass/style.sass */
+section[id="capabilities"] .container div ul li, section[id="capabilities"] header div ul li, section[id="capabilities"] footer p div ul li, footer section[id="capabilities"] p div ul li, section[id="capabilities"] .oops div ul li {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  font-size: 1.45rem;
+  line-height: 3.5rem;
 }
 /* line 393, ../sass/style.sass */
-section[id="design"] h2 .view {
-  border: 2px solid #98855d;
+section[id="capabilities"] .container div ul li:before, section[id="capabilities"] header div ul li:before, section[id="capabilities"] footer p div ul li:before, footer section[id="capabilities"] p div ul li:before, section[id="capabilities"] .oops div ul li:before {
   border-radius: 2px;
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 900;
-  margin-left: 20px;
-  padding: 4px 10px;
-  text-transform: uppercase;
-  vertical-align: 5px;
+  box-shadow: inset 0 0 0 3px rgba(82, 91, 96, 0.25);
+  content: " \0a ";
+  display: inline-block;
+  margin-right: 10px;
+  width: 0.8rem;
+  height: 0.8rem;
+  vertical-align: 4%;
 }
-/* line 405, ../sass/style.sass */
-section[id="design"] h2 .view i {
-  font-size: 2.5rem;
-  margin-left: 5px;
-  vertical-align: -3px;
+/* line 403, ../sass/style.sass */
+section[id="capabilities"] .container div ul li:after, section[id="capabilities"] header div ul li:after, section[id="capabilities"] footer p div ul li:after, footer section[id="capabilities"] p div ul li:after, section[id="capabilities"] .oops div ul li:after {
+  color: #495562;
+  content: attr(data-tools);
 }
-/* line 410, ../sass/style.sass */
-section[id="design"] h2 a {
-  border-bottom: none;
-  color: white;
+/* line 409, ../sass/style.sass */
+section[id="capabilities"] .container div ul li a:hover, section[id="capabilities"] header div ul li a:hover, section[id="capabilities"] footer p div ul li a:hover, footer section[id="capabilities"] p div ul li a:hover, section[id="capabilities"] .oops div ul li a:hover {
+  color: #98855d;
 }
-/* line 415, ../sass/style.sass */
-section[id="design"] h2 a:hover {
-  border-bottom-color: #98855d;
+/* line 412, ../sass/style.sass */
+section[id="capabilities"] .container div ul li ul, section[id="capabilities"] header div ul li ul, section[id="capabilities"] footer p div ul li ul, footer section[id="capabilities"] p div ul li ul, section[id="capabilities"] .oops div ul li ul {
+  color: #495562;
+  line-height: 2.25rem;
 }
-/* line 418, ../sass/style.sass */
-section[id="design"] h2 a:hover .view {
-  border-color: white;
-  margin-left: 40px;
+/* line 416, ../sass/style.sass */
+section[id="capabilities"] .container div ul li ul li, section[id="capabilities"] header div ul li ul li, section[id="capabilities"] footer p div ul li ul li, footer section[id="capabilities"] p div ul li ul li, section[id="capabilities"] .oops div ul li ul li {
+  margin-left: 16px;
+  margin-top: -1rem;
+}
+/* line 420, ../sass/style.sass */
+section[id="capabilities"] .container div ul li ul li:before, section[id="capabilities"] header div ul li ul li:before, section[id="capabilities"] footer p div ul li ul li:before, footer section[id="capabilities"] p div ul li ul li:before, section[id="capabilities"] .oops div ul li ul li:before {
+  box-shadow: inset 0 0 0 3px rgba(82, 91, 96, 0.1);
 }
 /* line 423, ../sass/style.sass */
-section[id="design"] [id="dribbble"], section[id="design"] [id="codepen"] {
-  margin: 0 auto 40px;
-  max-width: 68%;
+section[id="contact"] {
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #2a3847), color-stop(100%, #192129));
+  background-image: -webkit-linear-gradient(left top, #2a3847, #192129);
+  background-image: -moz-linear-gradient(left top, #2a3847, #192129);
+  background-image: -o-linear-gradient(left top, #2a3847, #192129);
+  background-image: linear-gradient(left top, #2a3847, #192129);
 }
-/* line 429, ../sass/style.sass */
-section[id="design"] [id="dribbble"]::after {
-  border-bottom: 2px solid #98855d;
+/* line 427, ../sass/style.sass */
+section[id="contact"] p {
+  color: #a2916d;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 4rem;
+  text-align: center;
+}
+/* line 437, ../sass/style.sass */
+section[id="contact"] p a {
+  border-bottom: none;
+  color: white;
+  display: inline-block;
+  font-weight: 700;
+}
+/* line 465, ../sass/style.sass */
+section[id="contact"] p a:after {
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  border-bottom: 2px solid #a2916d;
+  clear: both;
   content: "";
   display: block;
-  padding-top: 6%;
-}
-/* line 435, ../sass/style.sass */
-section[id="design"] [id="dribbble"] ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  list-style: none;
-}
-/* line 441, ../sass/style.sass */
-section[id="design"] [id="dribbble"] ul li {
-  flex: 0 1 calc(25% - 3px);
-  margin-bottom: 3px;
-}
-/* line 445, ../sass/style.sass */
-section[id="design"] [id="dribbble"] ul li:not(:nth-child(4n + 4)) {
-  margin-right: 3px;
-}
-/* line 448, ../sass/style.sass */
-section[id="design"] [id="dribbble"] ul li a {
-  border-bottom: none;
-  border-radius: 2;
-  display: block;
-  height: 165px;
-}
-/* line 455, ../sass/style.sass */
-section[id="design"] [id="dribbble"] ul li a:hover img {
-  -webkit-transform: scale(1.05, 1.05);
-  -moz-transform: scale(1.05, 1.05);
-  -ms-transform: scale(1.05, 1.05);
-  -o-transform: scale(1.05, 1.05);
-  transform: scale(1.05, 1.05);
-  opacity: 1;
-  z-index: 2;
-}
-/* line 460, ../sass/style.sass */
-section[id="design"] [id="dribbble"] ul li a img {
-  border-radius: 2px;
-  opacity: 0.5;
   width: 100%;
-  position: relative;
+}
+/* line 475, ../sass/style.sass */
+section[id="contact"] p a:hover:after {
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-/* line 471, ../sass/style.sass */
-footer .social ul {
-  display: flex;
-  list-style: none;
-  margin: 0 auto;
-  max-width: 800px;
+/* line 563, ../sass/style.sass */
+footer {
+  background: #796a4a;
+  padding: 1% 0;
 }
-/* line 477, ../sass/style.sass */
-footer .social ul li {
-  flex: 1;
-  position: relative;
-}
-/* line 481, ../sass/style.sass */
-footer .social ul li a {
-  border-bottom: none;
-  color: rgba(42, 56, 71, 0.5);
-  display: block;
-  height: 100%;
-  text-align: center;
-  padding: 10px 0;
-}
-/* line 490, ../sass/style.sass */
-footer .social ul li a:hover {
-  background: #98855d;
-  color: white;
-  padding: 20px 0 30px;
-}
-/* line 495, ../sass/style.sass */
-footer .social ul li a:hover:after {
-  color: rgba(255, 255, 255, 0.5);
-  content: attr(data-site);
+/* line 570, ../sass/style.sass */
+footer p.copyright {
+  color: #a2916d;
   font-size: 1rem;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 35px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: right;
 }
-/* line 506, ../sass/style.sass */
-footer .social ul li a i {
-  font-size: 3rem;
-  display: block;
+
+/* line 575, ../sass/style.sass */
+.oops {
+  display: none;
+  padding: 8% 0 0;
+}
+/* line 580, ../sass/style.sass */
+.oops h2 {
+  color: #98855d;
+}
+/* line 583, ../sass/style.sass */
+.oops p {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  margin: 20px 0;
+}
+/* line 588, ../sass/style.sass */
+.oops p.callout {
+  font-size: 2.2rem;
+  font-weight: 100;
+  line-height: 3.2rem;
+}
+/* line 593, ../sass/style.sass */
+.oops p code {
+  background: #192129;
+  border-radius: 2px;
+  color: #98855d;
+  padding: 4px 6px;
+}
+/* line 601, ../sass/style.sass */
+.oops a:hover {
+  color: #98855d;
+}
+/* line 604, ../sass/style.sass */
+.oops ul {
+  margin: 40px auto;
+  width: 100%;
+}
+/* line 609, ../sass/style.sass */
+.oops ul li {
+  flex: 1;
+  list-style: none;
+}
+/* line 613, ../sass/style.sass */
+.oops ul li a {
+  border-bottom: none;
+  font-size: 2.4rem;
+  padding: 20px;
 }
