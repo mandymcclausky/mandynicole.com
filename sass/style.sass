@@ -42,31 +42,31 @@ section
 		.oops
 			display: block
 
-.social // change position to fixed to hide behind following section on scroll when absopos
-	@extend .fadein
-	//background: shade($bg, 38)
-	border-radius: 2px
-	height: 50px
-	text-align: center
+// .social // change position to fixed to hide behind following section on scroll when absopos
+// 	@extend .fadein
+// 	//background: shade($bg, 38)
+// 	border-radius: 2px
+// 	height: 50px
+// 	text-align: center
 
-	ul
-		@extend .flex
-		@include align-content(flex-start)
-		height: 100%
-		list-style: none
-		margin: 0 auto
-		max-width: 800px
+// 	ul
+// 		@extend .flex
+// 		@include align-content(flex-start)
+// 		height: 100%
+// 		list-style: none
+// 		margin: 0 auto
+// 		max-width: 800px
 
-		li
-			@include flex(1)
-			height: 100%
+// 		li
+// 			@include flex(1)
+// 			height: 100%
 
-			a 
-				height: 100%
+// 			a 
+// 				height: 100%
 
-				i 
-					font-size: 1.75rem
-					display: block
+// 				i 
+// 					font-size: 1.75rem
+// 					display: block
 
 // STYLES
 
@@ -311,11 +311,15 @@ section
 					// 		font-size: 6rem
 
 		.social
+			$socialh: 40px
+			@extend .fadein
 			background: shade($bg, 30)
 			border-radius: 2px
 			color: $bg
-			width: 78%
-
+			height: $socialh
+			text-align: center
+			width: 90%
+	
 			position: absolute
 			bottom: 0
 			left: 0
@@ -323,31 +327,46 @@ section
 			margin-left: auto
 			margin-right: auto
 
-			&:hover
-				height: 70px
+			li
+				&:first-of-type
+					a
+						border-radius: 2px 0 0 0
 
-				a // general hover state
+				&:last-of-type
+					a
+						border-radius: 0 2px 0 0
+	
+			&:hover
+				height: $socialh*2
+
+				a // .social hover
+					@extend .fadein
 					color: $text
 					padding: 30px 0
-
+	
 			ul
+				display: flex
+				list-style: none
+				margin: 0 auto
+				max-width: 800px
+	 
 				li
-					position: relative // ensure :after stays within parent
-
-					a // regular state
+					flex: 1
+					position: relative
+	
+					a // default state
 						@extend .fadein
 						border-bottom: none
-						color: fade_out($primary, .5)
+						color: $bg
 						display: block
-						height: 100%
-						padding: 15px 0
+						padding: 10px 0
 							
 						&:hover // actual hover
-							//background: $yellow
 							+background-image(linear-gradient(shade($yellow, 20), shade($yellow, 5)))
 							color: #FFF
-							padding: 20px 0 50px
-
+							padding: 25px 0 35px
+							//height: $socialh*2
+	
 							&:after
 								color: fade_out(#FFF, .5)
 								content: attr(data-site)
@@ -355,9 +374,13 @@ section
 								position: absolute
 								left: 0
 								right: 0
+								bottom: 15px
 								margin-left: auto
 								margin-right: auto
-								padding: 5px 0 0
+	
+						i 
+							font-size: 2rem
+							display: block
 
 
 	&[id="capabilities"]
