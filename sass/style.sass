@@ -29,6 +29,7 @@ section
 
 .flex
 	@include display-flex() // display: flex
+	// @include flex-flow(row nowrap) // combination flex-wrap + flex-direction
 	@include align-content(center) // align-content: center
 	@include align-items(baseline) // align-items: baseline
 	@include justify-content(space-between) // justify-content: space-between
@@ -345,13 +346,14 @@ section
 					padding: 30px 0
 	
 			ul
-				display: flex
+				@extend .flex
+				@include align-items(flex-start)
 				list-style: none
 				margin: 0 auto
 				max-width: 800px
 	 
 				li
-					flex: 1
+					@include flex(1)
 					position: relative
 	
 					a // default state

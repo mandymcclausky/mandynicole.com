@@ -62,19 +62,8 @@ ul, ol, menu, dir, h1, h2, h3, h4, h5, h6, p, blockquote, b, strong, hr {
 	border-style:none;
 }
 
-hr {
-	border: none;
-	height: 1px;
-	width: 100%;
-	border-style: none;
-	background-color: #f0f0f0;
-}
-
 a { text-decoration: none; }
 
 .left { float:left; }
 .right { float:right; }
 .clear { clear: both; }
-
-.icon { font-family: "Entypo"; }
-.icon-s { font-family: "Entypo-S"; }
