@@ -22,7 +22,7 @@ $(document).ready(function() {
             write( original );
         }
     );
-	// above refactored with help Tim Kempf @ kempfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.info
+	// above refactored some with help from Tim Kempf @ kempfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.info
 
 	// .more buttons variables
 	var container = $(".details"),
