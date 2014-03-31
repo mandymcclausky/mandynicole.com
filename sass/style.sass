@@ -44,6 +44,22 @@ section
 		.oops
 			display: block
 
+// OS X's scrollbar
+body
+	&::-webkit-scrollbar
+		-webkit-appearance: none
+		position: absolute
+		width: 6px
+
+	&::-webkit-scrollbar-track
+		border: none
+		background: fade_out($primary, .5)
+
+	&::-webkit-scrollbar-thumb
+		background-color: $primary
+		border-radius: 6px
+
+
 // .social // change position to fixed to hide behind following section on scroll when absopos
 // 	@extend .fadein
 // 	//background: shade($bg, 38)
@@ -85,7 +101,7 @@ body
 	background-attachment: scroll
 	background-repeat: no-repeat
 	color: $text
-	overflow: scroll
+	overflow-y: scroll
 
 // nav
 // 	@extend .fadein
@@ -119,47 +135,6 @@ body
 a
 	border-bottom: .2rem solid fade_out($text, .85)
 	color: fade_out(#FFF,.45)
-
-header
-	@extend .container
-	padding: 18% 0 0
-
-	h1
-		cursor: help
-		font-size: 1.1rem
-		width: 100%
-		//@include scale(2)
-
-		.box 
-			@extend .fadein
-			border: 2px solid $primary
-			border-radius: 2px
-			color: #FFF
-			display: inline-block
-			margin-right: 4px
-			padding: 4px 1px 4px 2px
-			text-align: center
-			height: 30px
-			width: 30px
-
-			sup 
-				font-size: 1rem
-				vertical-align: 3px
-
-		.tagline
-			@extend .fadein
-			color: fade_out($primary, .25)
-			display: none
-			font-size: 1.4rem
-			font-weight: 400
-			padding-left: 3px
-			vertical-align: 0
-
-		&:hover
-			.box
-				border-color: $yellow
-			.tagline
-				color: $yellow
 			
 section
 	min-height: 40%
@@ -195,7 +170,7 @@ section
 			//color: tint($primary, 10)
 			font-size: 2.8rem
 			font-weight: 100
-			line-height: 4rem
+			line-height: 3.6rem
 
 		// &.divider
 		// 	text-align: center
@@ -246,10 +221,52 @@ section
 			font-size: 1.25rem
 
 	&[id="about"]
-		padding: 0 0 10%
+		@extend .flex
+		@include align-content(center)
+		@include align-items(center)
+		padding: 15% 0
 
 		.container
 			display: block
+
+			header
+
+				h1
+					cursor: help
+					font-size: 1.1rem
+					width: 100%
+					//@include scale(2)
+
+					.box 
+						@extend .fadein
+						border: 2px solid $primary
+						border-radius: 2px
+						color: #FFF
+						display: inline-block
+						margin-right: 4px
+						padding: 4px 1px 4px 2px
+						text-align: center
+						height: 30px
+						width: 30px
+
+						sup 
+							font-size: 1rem
+							vertical-align: 3px
+
+					.tagline
+						@extend .fadein
+						color: fade_out($primary, .25)
+						display: none
+						font-size: 1.4rem
+						font-weight: 400
+						padding-left: 3px
+						vertical-align: 0
+
+					&:hover
+						.box
+							border-color: $yellow
+						.tagline
+							color: $yellow
 
 			[id="bio"]
 				border-bottom: none
@@ -285,7 +302,7 @@ section
 				clear: both
 				display: none
 				font-size: 1.2rem
-				height: 190px
+				height: 120px
 				width: 100%
 
 				.left 
@@ -358,13 +375,13 @@ section
 					position: relative
 	
 					a // default state
-						@extend .fadein
 						border-bottom: none
 						color: $bg
 						display: block
 						padding: 10px 0
 							
 						&:hover // actual hover
+							@extend .fadein
 							+background-image(linear-gradient(shade($yellow, 20), shade($yellow, 5)))
 							color: #FFF
 							padding: 25px 0 35px

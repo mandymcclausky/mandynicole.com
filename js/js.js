@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).bind("load", function() {
 
 	// .tagline .typewrite()
 	var tagline = $(".tagline"),
@@ -7,19 +7,19 @@ $(document).ready(function() {
 
     $(tagline).typewrite();
 
-    var write = function( phrase ){
+    var write = function(phrase){
         var span = $("<span></span>");
-        tagline.html( span );
-        span.text( phrase ).typewrite();
+        tagline.html(span);
+        span.text(phrase).typewrite();
     };
     
-    write( original );
+    write(original);
     
     $("header h1").hover(
         function() {
-            write( who );
+            write(who);
         }, function() {
-            write( original );
+            write(original);
         }
     );
 	// above refactored some with help from Tim Kempf @ kempfffffffffffffffffffffffffffffffffffffffffffffffffffffffffff.info
@@ -33,8 +33,8 @@ $(document).ready(function() {
 	// manipulate .more onClick
 	function open() {
 		$(this).find(".callout").addClass("active");
-		$(container).slideDown(600);
-		$(content).hide().delay(300).fadeIn(400);
+		$(container).slideDown(300);
+		$(content).hide().delay(300).fadeIn(600);
 		$(text).text("Close");
 		$(icon).attr("class", "icon-close").stop();
 		$(this).one("click", close);

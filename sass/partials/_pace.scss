@@ -1,3 +1,5 @@
+@import "variables";
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -12,7 +14,7 @@
     top: 0;
     left: 0;
     height: 12px;
-    background: #d1c4ac;
+    background: $bg;
 
     -webkit-transition: -webkit-transform .3s, width 1s;
     -moz-transition: width 1s;

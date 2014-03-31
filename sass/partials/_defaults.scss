@@ -6,15 +6,19 @@
 	box-sizing: border-box;
 }
 
+html {
+	// http://snook.ca/archives/html_and_css/font-size-with-rem
+	font-size: 62.5%;
+}
+
 html, body {
 	height: 100%;
 }
 
 body {
 	//font-size: 100%/1.5;
-	// http://snook.ca/archives/html_and_css/font-size-with-rem
-	font-size: 62.5%;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.2rem;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
