@@ -45,19 +45,20 @@ section
 			display: block
 
 // OS X's scrollbar
-body
-	&::-webkit-scrollbar
-		-webkit-appearance: none
-		position: absolute
-		width: 6px
+@media only screen and (min-device-width: 480px)
+	body
+		&::-webkit-scrollbar
+			-webkit-appearance: none
+			position: absolute
+			width: 6px
 
-	&::-webkit-scrollbar-track
-		border: none
-		background: fade_out($primary, .5)
+		&::-webkit-scrollbar-track
+			border: none
+			background: fade_out($primary, .5)
 
-	&::-webkit-scrollbar-thumb
-		background-color: $primary
-		border-radius: 6px
+		&::-webkit-scrollbar-thumb
+			background-color: $primary
+			border-radius: 4px
 
 
 // .social // change position to fixed to hide behind following section on scroll when absopos
@@ -97,9 +98,11 @@ html, body
 	//height: 100%
 
 body
-	background: shade($bg, 20) url(/img/bg2.jpg) center 40%
-	background-attachment: scroll
-	background-repeat: no-repeat
+	+background-image(linear-gradient(left top, $header, $yellow))
+	background-size: 150%
+	//background: shade($bg, 20) url(/img/bg2.jpg) center 40%
+	//background-attachment: scroll
+	//background-repeat: no-repeat
 	color: $text
 	overflow-y: scroll
 
@@ -151,7 +154,7 @@ section
 	// 		> *
 	// 			opacity: 1
 
-	&:not(#about)
+	&:not(#about):not(#contact)
 		min-height: 100%
 
 	h2
@@ -166,8 +169,6 @@ section
 		line-height: 2.5rem
 
 		&.callout
-			color: shade($yellow, 20)
-			//color: tint($primary, 10)
 			font-size: 2.8rem
 			font-weight: 100
 			line-height: 3.6rem
@@ -182,7 +183,9 @@ section
 	a
 		&:hover, &.active
 			.more
-				border-color: $yellow
+				background: #FFF
+				border-color: #FFF
+				color: tint($yellow, 40)
 				padding: 0 18px 0 24px
 
 				.text 
@@ -193,7 +196,7 @@ section
 		@include transform(translateZ(0px))
 		@include appearance(none)
 		background: none
-		border: 2px solid $primary
+		border: 2px solid fade_out(tint($yellow, 40), .5)
 		border-radius: 2px
 		color: #FFF
 		cursor: pointer
@@ -202,6 +205,7 @@ section
 		height: 40px
 		margin: 2rem auto
 		padding: 0 2%
+		min-width: 43px
 
 		&:focus
 			outline: 0
@@ -209,7 +213,7 @@ section
 		.text
 			@extend .fadein
 			display: none
-			color: #FFF
+			color: tint($yellow, 40)
 			font-size: .9rem
 			font-weight: 700
 			letter-spacing: .1rem
@@ -223,11 +227,12 @@ section
 	&[id="about"]
 		@extend .flex
 		@include align-content(center)
-		@include align-items(center)
+		//@include align-items(center)
 		padding: 15% 0
 
 		.container
-			display: block
+			//display: block
+			width: 90%
 
 			header
 
@@ -239,7 +244,7 @@ section
 
 					.box 
 						@extend .fadein
-						border: 2px solid $primary
+						border: 2px solid tint($header, 40)
 						border-radius: 2px
 						color: #FFF
 						display: inline-block
@@ -255,7 +260,7 @@ section
 
 					.tagline
 						@extend .fadein
-						color: fade_out($primary, .25)
+						color: fade_out(tint($header, 50), .5)
 						display: none
 						font-size: 1.4rem
 						font-weight: 400
@@ -264,52 +269,57 @@ section
 
 					&:hover
 						.box
-							border-color: $yellow
+							background: #FFF
+							border-color: #FFF
+							color: tint($header, 40)
 						.tagline
-							color: $yellow
+							color: tint($header, 50)
 
-			[id="bio"]
+			a[id="bio"]
 				border-bottom: none
 				display: block
 				overflow: hidden
-				padding: 1% 0
+				padding: 4% 0 0
 
 				&:hover
 					@extend .fadein
 
 					.callout
-						color: $primary
+						color: rgba(255,255,255,.25)
 
 				.callout
 					@extend .fadein
+					color: #FFF
 					float: left
-					padding: 0 10% 0 0
-					width: 85%
+					//margin: 0 10% 0 0
+					width: 70%
 
 					&.active
 						//color: shade(fade_out($yellow, .5), 20)
-						color: fade_out($yellow, .5)
+						color: rgba(255,255,255,.5)
 
 						&:hover
-							color: fade_out($primary, .5)
+							color: rgba(255,255,255,.15)
 
 				.more
-					float: left
-					margin: 2rem 0 0
-					width: auto
+					float: right
+					//margin: 2rem 0 0
+					//width: 43px
 
 			.details
 				clear: both
 				display: none
-				font-size: 1.2rem
-				height: 120px
+				height: 180px
 				width: 100%
 
 				.left 
 					width: 85%
 
 				p, span
-					margin: 16px 0
+					color: $text
+					font-size: 1.8rem
+					line-height: 2.6rem
+					margin: 2% 0 0
 
 					// del 
 					// 	position: relative
@@ -332,9 +342,8 @@ section
 		.social
 			$socialh: 40px
 			@extend .fadein
-			background: shade($bg, 30)
-			border-radius: 2px
-			color: $bg
+			background: fade_out($bg, .65)
+			border-radius: 2px 2px 0 0
 			height: $socialh
 			text-align: center
 			width: 90%
@@ -356,35 +365,40 @@ section
 						border-radius: 0 2px 0 0
 	
 			&:hover
-				height: $socialh*2
+				@extend .fadein
+				height: $socialh*1.75
 
 				a // .social hover
 					@extend .fadein
-					color: $text
-					padding: 30px 0
+					color: tint($bg, 12)
+					padding: 26px 0 30px
 	
 			ul
 				@extend .flex
 				@include align-items(flex-start)
+				@include flex-flow(row wrap)
 				list-style: none
 				margin: 0 auto
 				max-width: 800px
 	 
 				li
+					@extend .fadein
 					@include flex(1)
 					position: relative
 	
 					a // default state
+						@extend .fadein
 						border-bottom: none
-						color: $bg
+						color: fade_out(tint($bg, 12), .65)
 						display: block
 						padding: 10px 0
 							
 						&:hover // actual hover
 							@extend .fadein
-							+background-image(linear-gradient(shade($yellow, 20), shade($yellow, 5)))
+							//+background-image(linear-gradient(shade($yellow, 20), shade($yellow, 5)))
+							background: $yellow
 							color: #FFF
-							padding: 25px 0 35px
+							padding: 20px 0 35px
 							//height: $socialh*2
 	
 							&:after
@@ -394,7 +408,7 @@ section
 								position: absolute
 								left: 0
 								right: 0
-								bottom: 15px
+								bottom: 20px
 								margin-left: auto
 								margin-right: auto
 	
@@ -405,11 +419,9 @@ section
 
 	&[id="capabilities"]
 		@extend .flex
-		@include align-content(center)
 		@include align-items(center)
-		+background-image(linear-gradient(left top, $primary, $bg))
+		+background-image(linear-gradient(left top, fade_out($bg, .25), $bg))
 		color: fade_out(#FFF, .45)
-
 		.container
 			@extend .flex
 			@include flex-flow(row wrap)
@@ -435,7 +447,7 @@ section
 
 						&:before
 							border-radius: 2px
-							box-shadow: inset 0 0 0 3px fade_out($text, .75)
+							box-shadow: inset 0 0 0 3px fade_out(tint($yellow, 20), .65)
 							content: " \0a "
 							display: inline-block
 							margin-right: 10px
@@ -464,60 +476,71 @@ section
 									box-shadow: inset 0 0 0 3px fade_out($text, .9)
 
 	&[id="contact"]
-		+background-image(linear-gradient(left top, $primary, $bg))
-		@extend .flex
+		//+background-image(linear-gradient(left top, fade_out($bg, .25), $bg))
+		// @extend .flex
+		// @include flex-flow(column)
+		// @include align-content(center)
+		// @include align-items(center)
+		//height: 100px
+		padding: 20% 5%
+		text-align: center
+
+		.container
+			max-width: none
+			padding: none
 
 		p 
-			//@extend .container
-			color: tint($yellow, 10)
-			@include flex(1)
-			@include align-self(center)
+			//@include flex(1)
+			font-size: 2.2rem
+			font-weight: 500
+			line-height: 3.2rem
+			white-space: pre-line
+
+		a 
+			//@include flex(1)
+			@extend .fadein
+			border-bottom: none
+			color: #FFF
+			display: inline-block
 			font-size: 3.2rem
-			font-weight: 100
-			line-height: 4rem
-			text-align: center
+			font-weight: 700
+			line-height: 4.6rem
+			padding: 0
+			white-space: nowrap
 
-			a 
+			// do not remove
+
+			// &:after
+			// 	@extend .fadein
+			// 	@include scaleX(0)
+			// 	border-bottom: 2px solid shade($yellow, 10)
+			// 	content: ""
+			// 	opacity: 0
+			// 	width: 40%
+
+			// 	position: absolute
+			// 	bottom: -2px
+			// 	right: 28.5%
+				
+			// &:hover
+
+			// 	&:after
+			// 		@include scaleX(1)
+			// 		opacity: 1
+
+			&:after
 				@extend .fadein
-				border-bottom: none
-				//color: shade($yellow, 10)
-				color: #FFF
-				display: inline-block
-				font-weight: 700
+				@include scaleX(0)
+				border-bottom: 2px solid tint($yellow, 10)
+				clear: both
+				content: ""
+				display: block
+				white-space: nowrap
+				width: 100%
 
-				// do not remove
-
-				// &:after
-				// 	@extend .fadein
-				// 	@include scaleX(0)
-				// 	border-bottom: 2px solid shade($yellow, 10)
-				// 	content: ""
-				// 	opacity: 0
-				// 	width: 40%
-
-				// 	position: absolute
-				// 	bottom: -2px
-				// 	right: 28.5%
-					
-				// &:hover
-
-				// 	&:after
-				// 		@include scaleX(1)
-				// 		opacity: 1
-
+			&:hover
 				&:after
-					@extend .fadein
-					@include scaleX(0)
-					border-bottom: 2px solid tint($yellow, 10)
-					clear: both
-					content: ""
-					display: block
-					white-space: nowrap
-					width: 100%
-
-				&:hover
-					&:after
-						@include scaleX(1)
+					@include scaleX(1)
 						
 
 	// &[id="design"]
@@ -658,3 +681,11 @@ footer
 				border-bottom: none
 				font-size: 2.4rem
 				padding: 20px
+
+.geo
+	display: none
+	position: absolute
+	.st0
+		fill: none
+		stroke-width: 1px
+		stroke-miterlimit: 10

@@ -11,7 +11,7 @@ $primary: hsl(210, 26%, 22%);
 $header: hsl(201, 24%, 40%);
 $bg: hsl(210, 25%, 13%);
 
-$text: hsl(201, 8%, 35%);
+$text: fade_out($primary, .25);
 $link: $blue;
 
 // Variables

@@ -9,6 +9,7 @@
 html {
 	// http://snook.ca/archives/html_and_css/font-size-with-rem
 	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
 }
 
 html, body {
@@ -17,7 +18,7 @@ html, body {
 
 body {
 	//font-size: 100%/1.5;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.2rem;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
