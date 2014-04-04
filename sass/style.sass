@@ -295,7 +295,7 @@ section
 
 					&.active
 						//color: shade(fade_out($yellow, .5), 20)
-						color: rgba(255,255,255,.5)
+						color: rgba(255,255,255,.25)
 
 						&:hover
 							color: rgba(255,255,255,.15)
@@ -311,12 +311,21 @@ section
 				height: 180px
 				width: 100%
 
+				p 
+					overflow: hidden
+					&:first-of-type
+						color: #FFF
+						font-size: 1.9rem
+						font-weight: 600
+						margin: 4% 0 0
+						width: 90%
+
 				.left 
 					width: 85%
 
 				p, span
 					color: $text
-					font-size: 1.8rem
+					font-size: 1.7rem
 					line-height: 2.6rem
 					margin: 2% 0 0
 
@@ -502,6 +511,7 @@ section
 			font-size: 3.2rem
 			font-weight: 700
 			line-height: 4.6rem
+			margin-top: 4px
 			padding: 0
 			white-space: nowrap
 
@@ -640,30 +650,29 @@ footer
 	@extend .container
 	display: none
 	padding: 8% 0 0
-	
-	h2
-		color: $yellow
 
 	p 
-		font-size: 1.8rem
-		line-height: 2.8rem
-		margin: 20px 0
+		font-size: 1.4rem
+		line-height: 2.6rem
+		margin: 15px 0
 
 		&.callout
+			color: #FFF
 			font-size: 2.2rem
-			font-weight: 100
-			line-height: 3.2rem
+			font-weight: 300
+			margin-top: 40px
 
 		code 
-			background: $bg
+			background: $primary
 			border-radius: 2px
 			color: $yellow
 			padding: 4px 6px
 
 	a
 		@extend .fadein
+		color: fade_out(tint($yellow, 40), .25)
 		&:hover
-			color: $yellow
+			color: fade_out(tint($yellow, 40), .05)
 
 	ul
 		@extend .flex
