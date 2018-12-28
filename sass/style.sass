@@ -376,7 +376,8 @@ section
 				@extend .fadein
 				height: $socialh*1.75
 
-				a // .social hover
+				// .social hover
+				a
 					@extend .fadein
 					color: fade_out(tint($bg, 12), .65)
 					padding: 26px 0 30px
@@ -393,15 +394,17 @@ section
 					@extend .fadein
 					@include flex(1)
 					position: relative
-	
-					a // default state
+
+					// default state
+					a
 						@extend .fadein
 						border-bottom: none
 						color: fade_out(tint($bg, 12), .25)
 						display: block
 						padding: 10px 0
-							
-						&:hover // actual hover
+
+						// actual hover
+						&:hover
 							@extend .fadein
 							//+background-image(linear-gradient(shade($yellow, 20), shade($yellow, 5)))
 							background: $yellow
