@@ -1,2 +1,3 @@
+*.idea
 *.sass-cache
-*_assets
+*node_modules
