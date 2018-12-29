@@ -1,0 +1,24 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "The ironically not-up-to-date repository for my not-up-to-date website. If you're looking for experiments, check [Codepen](https://codepen.io/mandynicole/).",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^9.4.3",
+    "postcss-cli": "^6.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mandymcclausky@github.com/mandymcclausky/mandynicole.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandymcclausky/mandynicole.com/issues"
+  },
+  "homepage": "https://github.com/mandymcclausky/mandynicole.com#readme"
+}
