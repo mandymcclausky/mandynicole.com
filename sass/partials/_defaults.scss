@@ -22,11 +22,6 @@ body {
 	font-size: 1.2rem;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
-	-moz-font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
-	-moz-font-feature-settings: "onum=1, kern=1, liga=1";
-	-ms-font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
-	-o-font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
-	-webkit-font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
 	font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
 	text-rendering: optimizeLegibility;
 }
